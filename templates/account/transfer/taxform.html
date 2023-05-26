@@ -1,0 +1,41 @@
+
+ <div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Transfer in progress</h4>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+          
+            <form method="post" action="{% url 'confirmtax' pk %}">
+                {% csrf_token %}
+
+
+                <label>Tax Code</label>
+                <div class="form-group">
+                    <input type="text" name="code"  class="form-control input-rounded"
+                         hx-post="{% url 'checktax' %}" hx-trigger="keyup changed" hx-target="#taxmessage">
+                        <div id="taxmessage">
+                            
+                        </div>
+                        
+                  
+                </div>
+                <div class="alert alert-warning notification">
+                    <p class="notificaiton-title mb-2"> Please input your personal income Tax Code to complete this transaction.</p>
+                 
+                </div>
+                
+                
+                <div class="justify-content-center text-center">
+                    <div class="form-group ">
+                        <button type="submit"class="btn btn-primary">Complete transaction</button>
+                    </div>
+                </div>
+
+            </form>
+
+          
+        </div>
+    </div>
+</div>
+  

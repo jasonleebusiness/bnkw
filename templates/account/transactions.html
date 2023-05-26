@@ -1,0 +1,125 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>All Transactions | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+
+{% block content%}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- Add Order -->
+
+        <!-- <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">All</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Transactions</a></li>
+            </ol>
+        </div> -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">All Transactions</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive recentOrderTable">
+                            <table class="table primary-table-bordered verticle-middle table-responsive-lg">
+                                <thead class="thead-primary">
+                                    <tr>
+                                        <th scope="col">Batch #</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Account</th>
+
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Status</th>
+                                        <!-- <th scope="col">Channel</th> -->
+                                        
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                               
+                                <tbody>
+
+
+
+                                    {% for rs in transaction %}
+                                    <tr>
+
+                                        <td><a href="{{rs.get_absolute_url}}">#{{rs.code}}</a></td>
+                                        <td><a href="{{rs.get_absolute_url}}">{{rs.account.currency}} {{rs.amount|intcomma}}</a></td>
+                                        <td>
+                                            {% if rs.action == 'Credit' %}
+                                            <span class="badge light badge-rounded badge-success">Credit</span>
+                                            {% else %}
+                                            <span class="badge light badge-rounded badge-danger">Debit</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>{{rs.account.get_account_type_display}}</td>
+
+                                        <td>
+                                            {% if rs.date %}
+                                            {{rs.date|date:"M j, Y"}}
+                                            {% else %}
+                                            {{rs.created|date:"M j, Y"}}
+                                            
+                                            {% endif %}
+                                        </td>
+                                        <td>{{rs.status}}</td>
+                                        <!-- <td>{{rs.channel}}</td> -->
+
+                                       
+                                        <td>
+                                            <div class="dropdown custom-dropdown mb-0">
+                                                <div class="btn sharp btn-primary tp-btn" data-toggle="dropdown">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
+                                                        height="18px" viewBox="0 0 24 24" version="1.1">
+                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                            fill-rule="evenodd">
+                                                            <rect x="0" y="0" width="24" height="24" />
+                                                            <circle fill="#000000" cx="12" cy="5" r="2" />
+                                                            <circle fill="#000000" cx="12" cy="12" r="2" />
+                                                            <circle fill="#000000" cx="12" cy="19" r="2" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                        href="{{rs.get_absolute_url}}">Details</a>
+                                                    <!-- <a class="dropdown-item"
+                                                        href="{% url 'transfer_detail' rs.id %}">Details</a> -->
+                                                    <!-- <a class="dropdown-item text-danger"
+                                                        href="javascript:void(0);">Cancel</a> -->
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock content%}

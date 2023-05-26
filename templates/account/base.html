@@ -1,0 +1,589 @@
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% block seo %}
+    
+    {% endblock seo %}
+    <!-- Favicon icon -->
+
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{{settings.iconfav.url}}">
+    <link rel="icon" type="image" href="{{settings.iconfav.url}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{settings.iconfav.url}}">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="{{settings.iconfav.url}}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{settings.iconfav.url}}">
+    <link rel="apple-touch-icon" sizes="32x32" href="{{settings.iconfav.url}}">
+    <link rel="apple-touch-icon" sizes="16x16" href="{{settings.iconfav.url}}">
+
+
+
+
+
+    <link href="{% static '' %}assets/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '' %}assets/vendor/chartist/css/chartist.min.css">
+    <script src="https://kit.fontawesome.com/e5c44e9272.js" crossorigin="anonymous"></script>
+    <!-- Vectormap -->
+    <link href="{% static '' %}assets/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="{% static '' %}assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="{% static '' %}assets/css/style.css" rel="stylesheet">
+    <link href="{% static '' %}assets/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+
+    <!-- <script src="{% static '' %}assets/js/htmx.min.js" defer></script> -->
+    <!-- <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script> -->
+    <script src="{% static '' %}assets/js/htmx.js" ></script>
+
+
+
+
+
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "9797d642-e222-4383-af65-db30b96d962a";
+        (function () {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
+    
+
+    
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="{% url 'account' %}" class="brand-logo">
+                <img class="logo-abbr" src="{{settings.icon.url}}" alt="">
+                <img class="logo-compact" src="{{settings.icontext.url}}" alt="">
+                <img class="brand-title mt2" src="{{settings.icontext.url}}" alt="">
+
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Chat box start
+        ***********************************-->
+
+        <!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Account Dashboard
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+
+                            <li class="nav-item dropdown notification_dropdown">
+                                <div id="google_translate_element"></div>        
+                                    <style type="text/css">
+                                        .goog-te-banner-frame.skiptranslate {
+                                            display: none !important;
+                                        }
+                
+                                        body {
+                                            top: 0px !important;
+                                        }
+                
+                                        .skiptranslate {
+                                            width: 100% !important;
+                                            /* display: none; */
+                                        }
+                
+                
+                
+                                        .goog-logo-link {
+                                            display: none !important;
+                                        }
+                
+                                        .goog-te-gadget {
+                                            color: transparent !important;
+                                        }
+                                    </style>
+                                    <script type="text/javascript">
+                                        function googleTranslateElementInit() {
+                                            new google.translate.TranslateElement({
+                                                pageLanguage: 'en',
+                                                // includedLanguages: 'ar,en,es,jv,ko,ja,fr,ru,zh-CN',
+                                            }, 'google_translate_element');
+                                        }
+                                    </script>
+                
+                                    <script type="text/javascript"
+                                        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+                                    </script>
+
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
+                                    <img src="{{request.user.userprofile.image.url}}" width="20" alt="" />
+                                    <div class="header-info">
+                                        <span class="text-black">{{request.user.first_name}}
+                                            {{request.user.last_name}}</span>
+                                        <p class="fs-12 mb-0">{{request.user.username}}</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <!-- <a href="email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                            </path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        <span class="ml-2">Inbox </span>
+                                    </a> -->
+                                    <a href="{% url 'logout'%}" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav">
+            <div class="dlabnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li>
+                        <a class="ai-icon" href="{% url 'account' %}" aria-expanded="false">
+                            <i class="flaticon-381-networking"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <!-- <i class="flaticon-381-send"></i> -->
+                            <i class="fa fa-money"></i>
+                            <span class="nav-text">Accounts</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'myaccounts' %}">My Account(s)</a></li>
+                            <li><a href="{% url 'all_transactions' %}">Transaction History</a></li>
+                            <li><a href="{% url 'create_account' %}">Register New Account</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <!-- <i class="flaticon-381-send"></i> -->
+                            <i class="fa fa-money"></i>
+                            <span class="nav-text">Withdrawal/Transfer</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a type="button" data-toggle="modal" data-target="#transferfunds">Transfer Funds</a>
+                            </li>
+                            <li><a href="{% url 'transfer_beneficiary' %}">Transfer to Beneficiary</a></li>
+                            <li><a href="{% url 'echeque' %}">Send eCheque</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-notepad"></i>
+                            <span class="nav-text">Account Beneficiaries</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'add_beneficiary' %}">Add Beneficiaries</a></li>
+                            <li><a href="{% url 'beneficiaries' %}">View Beneficiaries</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            {% comment %}<i class="flaticon-381-send"></i>  {% endcomment %}
+                            <i class="fa fa-money"></i>
+                            <span class="nav-text">Message</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a type="button" data-toggle="modal" data-target="#transferfunds">Inbox</a></li>
+
+
+
+
+                            <li><a href="{% url 'transfer_beneficiary' %}">My Support Ticket</a></li>
+                            <li><a href="{% url 'transfer_beneficiary' %}">Contact Support</a></li>
+
+                        </ul>
+                    </li> -->
+                    <li><a class="ai-icon" href="{% url 'cheque' %}" aria-expanded="false">
+                            <i class="flaticon-381-network"></i>
+                            <span class="nav-text">Cheque Deposit</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="{% url 'card' %}" aria-expanded="false">
+                         
+                            <i class="fa fa-money"></i>
+                            <span class="nav-text">Cards</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'card' %}">My Cards</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false" data-toggle="modal"
+                            data-target="#loanModal">
+                            <!-- <i class="flaticon-381-receive"></i> -->
+                            <i class="fa fa-briefcase"></i>
+
+                            <span class="nav-text">Loans</span>
+                        </a>
+
+                    </li>
+                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false" data-toggle="modal"
+                            data-target="#billModal">
+                            <i class="fa fa-tasks"></i>
+                            <span class="nav-text">Bill Payment</span>
+                        </a>
+
+                    </li>
+
+                    <li><a class="ai-icon" href="{% url 'profile' %}" aria-expanded="false">
+                            <i class="flaticon-381-user"></i>
+                            <span class="nav-text">My Profile</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+                <!-- <a class="add-menu-sidebar d-block" href="javascript:void(0)"  data-toggle="modal" data-target="#addOrderModalside" >+ New Project</a> -->
+                <div class="copyright">
+                    <p><strong>Account Dashboard</strong> © {{settings.title}}. <br> 2022 All Rights Reserved</p>
+                    <!-- <p>Made with <span class="heart"></span> by DexignLab</p> -->
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="depositModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                class="mr-2">
+                                <polygon
+                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
+                                </polygon>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg> Opps...</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">DEPOSIT IS NOT ENABLED FOR YOUR ACCOUNT. CONTACT THE CUSTOMER SUPPORT DESK
+                        TO ENABLE IT.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="loanModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                class="mr-2">
+                                <polygon
+                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
+                                </polygon>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg> Loan Application</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                                <polygon
+                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
+                                </polygon>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg>
+                            <strong>Opps!</strong> Loan Application is not enabled for your account. Contact the
+                            customer support desk to enable it.
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="billModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                class="mr-2">
+                                <polygon
+                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
+                                </polygon>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg> Opps...</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                                <polygon
+                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
+                                </polygon>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg>
+                            <strong>Opps!</strong> Bill Payment is not enabled for your account. Contact the customer
+                            support desk to enable it.
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="transferfunds">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Transfer to an Account</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class=" col-lg-6 ">
+                                <div class="widget-stat card">
+                                    <div class="card-body p-4">
+                                        <a href="{% url 'transferinternal' %}">
+                                            <div class="media ai-icon">
+                                                <span class="mr-3 bgl-primary text-primary">
+                                                    <i class="fas fa-share-square"></i>
+                                                </span>
+                                                <div class="media-body">
+                                                    <p class="mb-1">Internal</p>
+                                                    <h4 class="mb-0">{{settings.name}} Account</h4>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="widget-stat card">
+                                    <div class="card-body p-4">
+                                        <a href="{% url 'transfer' %}">
+                                            <div class="media ai-icon">
+                                                <span class="mr-3 bgl-warning text-warning">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                </span>
+                                                <div class="media-body">
+                                                    <p class="mb-1">Local & Overseas</p>
+                                                    <h4 class="mb-0">Other Banks</h4>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div id="transfermodal" class="modal fade " data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div id="transferdialog" class="modal-dialog modal-dialog-centered">
+               
+            </div>
+          </div> -->
+
+        <!--  -->
+        {% block content %}
+        {% endblock content %}
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright ©</a> {{settings.title}}. 2022</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!--Start of Tawk.to Script-->
+    <!-- <script >
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/61c4460a80b2296cfdd30aeb/1fnjb36f9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script> -->
+    <!--End of Tawk.to Script-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="{% static '' %}assets/vendor/global/global.min.js"></script>
+    <script src="{% static '' %}assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="{% static '' %}assets/js/custom.min.js"></script>
+    <script src="{% static '' %}assets/js/dlabnav-init.js"></script>
+
+
+    <!-- Chartist -->
+    <script src="{% static '' %}assets/vendor/chartist/js/chartist.min.js"></script>
+    <script src="{% static '' %}assets/vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+    <!-- Flot -->
+    <script src="{% static '' %}assets/vendor/flot/jquery.flot.js"></script>
+    <script src="{% static '' %}assets/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="{% static '' %}assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="{% static '' %}assets/vendor/flot-spline/jquery.flot.spline.min.js"></script>
+
+    <!-- Chart sparkline plugin files -->
+    <script src="{% static '' %}assets/vendor/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="{% static '' %}assets/js/plugins-init/sparkline-init.js"></script>
+
+    <!-- Chart piety plugin files -->
+    <script src="{% static '' %}assets/vendor/peity/jquery.peity.min.js"></script>
+    <script src="{% static '' %}assets/js/plugins-init/piety-init.js"></script>
+    <script src="{% static '' %}assets/vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <!-- Init file -->
+    <script src="{% static '' %}assets/js/plugins-init/widgets-script-init.js"></script>
+
+    <script  src="{% static '' %}assets/js/dialog.js"></script>
+
+
+</body>
+
+
+</html>

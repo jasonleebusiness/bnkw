@@ -1,0 +1,296 @@
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+<header id="header" class="header-effect-shrink"
+    data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
+    <div class="header-body border-top-0">
+        <div class="header-top header-top-borders">
+            <div class="container h-100">
+                <div class="header-row h-100">
+                    <div class="header-column justify-content-start">
+                        <div class="header-row">
+                            <nav class="header-nav-top">
+                                <ul class="nav nav-pills">
+                                    <!-- <li class="nav-item nav-item-borders py-2 d-none d-sm-inline-flex">
+                                        <span class="ps-0"><i class="far fa-dot-circle text-4 text-color-primary" style="top: 1px;"></i> 1234 Street Name, City Name</span>
+                                    </li> -->
+                                    <li class="nav-item nav-item-borders py-2">
+                                        {% if user.is_authenticated %}
+                                        <a href="{% url 'logout' %}"><i class="far fa-user"></i> <strong>Logout</strong></a>
+                                        {% else %}
+                                        <a href="{% url 'login' %}"><i class="far fa-user"></i> <strong>Login</strong></a>
+                                        {% endif %}
+                                    </li>
+                                    <!-- <li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
+                                        <a href="tel:{{settings.phone}}"><i
+                                                class="fas fa-phone text-4 text-color-primary" style="top: 1px;"></i>
+                                            {{settings.phone}}</a>
+                                    </li> -->
+                                    <li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
+                                        <a href="mailto:{{settings.email}}"><i
+                                                class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>
+                                            {{settings.email}}</a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <nav class="header-nav-top">
+                                <ul class="header-social-icons social-icons  d-sm-block social-icons-clean">
+                                    <div id="google_translate_element"></div>        
+                                    <style type="text/css">
+                                        .goog-te-banner-frame.skiptranslate {
+                                            display: none !important;
+                                        }
+                
+                                        body {
+                                            top: 0px !important;
+                                        }
+                
+                                        .skiptranslate {
+                                            width: 100% !important;
+                                            /* display: none; */
+                                        }
+                
+                
+                
+                                        .goog-logo-link {
+                                            display: none !important;
+                                        }
+                
+                                        .goog-te-gadget {
+                                            color: transparent !important;
+                                        }
+                                    </style>
+                                    <script type="text/javascript">
+                                        function googleTranslateElementInit() {
+                                            new google.translate.TranslateElement({
+                                                pageLanguage: 'en',
+                                                // includedLanguages: 'ar,en,es,jv,ko,ja,fr,ru,zh-CN',
+                                            }, 'google_translate_element');
+                                        }
+                                    </script>
+                
+                                    <script type="text/javascript"
+                                        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+                                    </script>
+                                </ul>
+                               
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-container container">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-logo">
+                            <a href="{% url 'index' %}">
+                                <img alt="company logo" width="250" height="40" 
+                                     src="{{settings.iconblue.url}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <div class="header-nav header-nav-stripe order-2 order-lg-1">
+                            <div
+                                class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                <nav class="collapse">
+                                    <ul class="nav nav-pills" id="mainNav">
+                                        <li class="dropdown dropdown-mega"> <a class="dropdown-item dropdown-toggle"
+                                                href="#"> Personal </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="dropdown-mega-content">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <span class="dropdown-mega-sub-title">Bank
+                                                                    Account</span>
+                                                                <ul class="dropdown-mega-sub-nav">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_checking' %}">Checkings</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_savings' %}">Savings</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_cards' %}">Credit
+                                                                            Cards</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <span class="dropdown-mega-sub-title">Wealth Management
+                                                                    Banking</span>
+                                                                <ul class="dropdown-mega-sub-nav">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_invest' %}">Investments</a>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_retire' %}">Retirement</a>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <span class="dropdown-mega-sub-title">Loans &
+                                                                    Credit</span>
+                                                                <ul class="dropdown-mega-sub-nav">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_mortgage' %}">Mortgates</a>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'p_auto' %}">Auto Loans</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown dropdown-mega"> <a class="dropdown-item dropdown-toggle"
+                                                href="#"> Business </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="dropdown-mega-content">
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <span class="dropdown-mega-sub-title">Banking</span>
+                                                                <ul class="dropdown-mega-sub-nav">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'b_checking' %}">Checking
+                                                                            Account</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'b_cash' %}">Cash
+                                                                            Management</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'b_credit' %}">Credit &
+                                                                            Financing</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <span class="dropdown-mega-sub-title">International
+                                                                    Banking</span>
+                                                                <ul class="dropdown-mega-sub-nav">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'b_wire' %}">International Wire
+                                                                            Transfer</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="{% url 'b_foreign' %}">Foreign
+                                                                            Currency Account</a>
+                                                                    </li>
+
+
+
+                                                                </ul>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown"> <a class="dropdown-item dropdown-toggle " href="#">
+                                                Commercial </a>
+                                            <ul class="dropdown-menu">
+
+                                                <li> <a class="dropdown-item"
+                                                        href="{% url 'c_solutions' %}">Solutions</a>
+                                                </li>
+                                                <li> <a class="dropdown-item"
+                                                        href="{% url 'c_expertise' %}">Expertise</a>
+                                                </li>
+                                                <!-- <li> <a class="dropdown-item" href="{% url 'c_deals' %}">Deals</a>
+                                            </li> -->
+                                                <!-- <li> <a class="dropdown-item" href="">Insights</a>
+                                            </li> -->
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"> <a class="dropdown-item dropdown-toggle " href="#">
+                                                Investments </a>
+                                            <ul class="dropdown-menu">
+
+                                                <li> <a class="dropdown-item" href="{% url 'i_phil' %}">Philosophy</a>
+                                                </li>
+                                                <li> <a class="dropdown-item" href="{% url 'i_outlook' %}">Market
+                                                        Outlook</a>
+                                                </li>
+                                                <!-- <li> <a class="dropdown-item" href="feature-gdpr.html">Investment Banking</a>
+                                                </li>
+                                                <li> <a class="dropdown-item" href="feature-gdpr.html">Spotlight on Industries</a>
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"> <a class="dropdown-item dropdown-toggle " href="#"> About
+                                                Us </a>
+                                            <ul class="dropdown-menu">
+
+                                                <li> <a class="dropdown-item" href="{% url 'aboutus' %}">Who We Are</a>
+                                                </li>
+                                                <li> <a class="dropdown-item" href="{% url 'mission' %}">Our Vision &
+                                                        Mission</a>
+                                                </li>
+                                                <li> <a class="dropdown-item" href="{% url 'expectation' %}">Service
+                                                        Expectations</a>
+                                                </li>
+                                                <li> <a class="dropdown-item" href="{% url 'career' %}">Careers at
+                                                        {{settings.name}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li> <a class="" href="{% url 'contactus' %}">
+                                                Contact </a>
+
+                                        </li>
+
+
+                                    </ul>
+                                </nav>
+                            </div>
+                            <button class="btn btn-primary header-btn-collapse-nav" data-bs-toggle="collapse"
+                                data-bs-target=".header-nav-main nav">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+

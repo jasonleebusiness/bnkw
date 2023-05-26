@@ -1,0 +1,241 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>{{settings.title}} - Homepage </title>
+<meta name="description" content="{{settings.description}}">
+<meta name="author" content="{{settings.company}}">
+<meta name="keywords" content="{{settings.title}}, {{settings.name}}, Online banking, Credit cards, loans, mortgages, business banking, debit cards, international banking">
+{% endblock seo %}
+
+
+
+
+{% block content %}
+
+
+<!--SLIDER START-->
+<div class="home-slider">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('{% static '' %}assets3/img/barclays-meeting.jpg')">
+            <div class="container">
+   
+                <div class="slider-caption slider-caption-alt ">
+                    <h2 class="display-4 animated fadeInRight ">Let's bank <br><span>  better Together</span></h2>
+                    <p class="lead animated fadeInRight">Banking that grows in tandem with your objectives</p>
+                  
+                </div>  
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('{% static '' %}assets3/img/skyline.jpg')">
+            <div class="container">
+                <div class="slider-caption slider-caption-alt">
+                    <h2 class="display-4 animated fadeInRight"><span>International Banking</span></h2>
+                    <p class="lead animated fadeInRight">Here, when you’re there</p>
+                   
+                </div>  
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('{% static '' %}assets3/img/customer-service.jpg')">
+            <div class="container">
+                <div class="slider-caption slider-caption-alt">
+                    <h2 class="display-4 animated fadeInRight">Reliable <br><span>Industrial Solutions</span></h2>
+                    <p class="lead animated fadeInRight">We deliver sustainable solutions and services to various industries within the USA. Our partners and clients value us for the quality of our products.</p>
+                    <!-- <div class="btn-more"><a class="btn btn-slider" href="#" role="button">Learn More</a></div> -->
+                </div>  
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon custom-control" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon custom-control" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>  
+</div>
+<!--SLIDER END-->
+
+<!--SERVICES SECTION START-->
+
+<!--SERVICES SECTION END-->
+
+<!-- CONTENT START -->
+<section>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="home-about">
+                <div class="ha-title">
+                    <h5 style="color: #00395d;">Personal Banking</h5>
+                    <h2 style="color: #00395d;">Introducing Barclaycard Avios</h2>
+                </div> 
+                <p class="strong">A new way to collect Avios on your everyday spend.</p>
+                
+                <p>23.9% APR Representative (variable)
+
+                    Subject to application, financial circumstances and borrowing history. Eligibility and conditions apply.</p>
+            </div>  
+          </div>
+          <div class="col-lg-6 space-break">
+            <div class="organic-pulsing-video">
+              <div class="youtube-popup" data-listnum="1" style="display: none">
+                <a  class="popup-youtube">
+                    <figure class="video-image"><img src="{% static '' %}assets3/img/ski-team.jpg" alt=""></figure>
+                </a>
+                <!-- <button class="pulse-button"></button> -->
+              </div>
+            </div> 
+          </div>
+        </div>
+    </div>
+  
+    <!-- WIDE SECTION START -->
+    <div class="container-wide-grid">
+        <div class="row">
+          <div class="col-lg-6 full-thumb-layer"></div>
+          <div class="col-lg-6 full-caption-layer">
+            <div class="fc-content">
+              <h5>Dedicated to Your Success</h5>
+              <h2><span style="color: #00395d;">Relationship-Based Banking</span></h2>
+              <p>There is more to success than what is shown on a balance sheet. Our priority at {{settings.title}} is you! We're here to help you reach your financial objectives, and we like seeing you succeed. We are happy to provide services, resources, and technology that prioritize our people and communities.</p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="order-last order-md-12 col-lg-6 full-caption-layer">
+                <div class="fc-content fc-left-align">
+                  <h5>Digital Banking</h5>
+                  <h2><span style="color: #00395d;">Get Instant Access To Your Account</span></h2>
+                  <p>You desire greater control over where and when you bank. Our online digital features and mobile banking make banking from anyplace easier than ever. You may check your balances, pay bills, transfer payments, set notifications, and do other things from your laptop, smartphone, or tablet at any time.</p>
+                  
+                </div>
+              </div>
+              <div class="order-first order-md-12 col-lg-6 full-thumb-layer-alt"></div>
+        </div>
+    </div>
+    <!-- WIDE SECTION END -->
+    
+
+     <!-- -->
+     <div class="container">
+        <div class="section-title">
+            <h2 style="color: #00395d;">We're Stepping Up For You</h2>
+            <p>We make every dream a reality.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4">
+                <div class="blog-preview">
+                    <div class="thumbnail-box">
+                        <figure class="bp-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/mortgage.jpg" alt=""></a></figure> 
+                       
+                    </div> 
+                    <div class="bp-caption">
+                        <h3 style="color: #00395d;">Mortgages</h3>
+                       
+                        <p>A dream mortgage is required for your ideal home. {{settings.name}} Mortgage Company provides a number of mortgage alternatives to assist you in becoming a homeowner.</p>
+                        <div class="btn-more rounded-pill">
+                            <a class="btn btn-custom rounded-pill" href="{% url 'p_mortgage' %}" role="button">Learn more</a>
+                           </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+            <div class="blog-preview">
+                <div class="thumbnail-box">
+                    <figure class="bp-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/investment.jpg" alt=""></a></figure> 
+                   
+                </div> 
+                <div class="bp-caption">
+                    <h3 style="color: #00395d;">Investments</h3>
+                   
+                    <p>Through {{settings.name}} Financial advisors, you'll have guidance and access to financial solutions from stock and mutual funds to IRAs and insurance</p>
+                    <div class="btn-more rounded-pill">
+                        <a class="btn btn-custom rounded-pill" href="{% url 'p_invest' %}" role="button">Learn more</a>
+                       </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="blog-preview">
+                    <div class="thumbnail-box">
+                        <figure class="bp-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/autoloan.jpg" alt=""></a></figure> 
+                        
+                    </div> 
+                    <div class="bp-caption">
+                        <h3 style="color: #00395d;">Auto-Loans</h3>
+                        
+                        <p>We provide better rates than most other financial institutions. Get the car you need without spending a fortune on a loan.
+    
+                        </p>
+                        <div class="btn-more rounded-pill">
+                            <a class="btn btn-custom rounded-pill"  href="{% url 'p_auto' %}" role="button">Learn more</a>
+                           </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+        
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="section-tittle-alt">
+            <h2 style="color: #00395d;">Reliable Banking Services</h2>
+        </div>
+        <p class="gallery-info service-alt">Business and Investments solutions to help you grow your wealth</p>
+        
+        <!-- PROJECT GRID START -->
+        <div class="row hover-effects image-hover">
+          <div class="col-md-6 col-lg-4">
+             <div class="project-grid">
+                <figure class="pg-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/online-banking.jpg" alt=""></a></figure> 
+                <div class="pg-caption">
+                    <!-- <h5>Power and Energy</h5> -->
+                    <h3 style="color: #00395d;">Online Banking</h3>
+                    <p>Through our Online Banking channels, we provide best-in-class online solutions for both corporate and private clients throughout our services, with optimum security features.</p>
+                 </div>
+             </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+             <div class="project-grid">
+                <figure class="pg-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/commercial-banking.jpg" alt=""></a></figure> 
+                <div class="pg-caption">
+                    <!-- <h5>Agricultural</h5> -->
+                    <h3 style="color: #00395d;">Commercial Banking</h3>
+                    <p>The Commercial Banking business serves all non-institutional clients along the value chain of the Bank's significant corporate customers.</p>
+                 </div>
+             </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+             <div class="project-grid">
+                <figure class="pg-thumbnail"><a href="#"><img src="{% static '' %}assets3/img/personal-banking.jpg" alt=""></a></figure> 
+                <div class="pg-caption">
+               
+                    <h3>Personal Banking</h3>
+                    <p>We provide a whole value package, with specialized services geared to meet your specific needs: savings accounts, current accounts, and loans.</p>
+                 </div>
+             </div>
+          </div>
+         
+        </div>
+        <!-- PROJECT GRID END -->
+    </div>
+
+
+ 
+
+</section> 
+<!-- CONTENT START -->
+{% endblock content %}

@@ -1,0 +1,110 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-md bg-transparent m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-dark text-10"><strong>Our promise to you</strong></h1> <span
+                        class="sub-title text-dark">We're committed to providing the best possible service to our
+                        Members.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr class="m-0">
+
+    <div class="container py-5 mt-3">
+
+        <div class="row">
+            <div class=" col-lg-8">
+
+                <h2 class="font-weight-normal text-7 mb-2"><strong
+                        class="font-weight-extra-bold">Service-oriented</strong></h2>
+                <p class="lead">Our commitment to aiding our Members, team members, and communities in attaining their
+                    financial goals and objectives is simply who we are and why we're here, with a love for service at
+                    the foundation of our existence.
+
+                    Because our Members are owners in a financial cooperative, offering outstanding service is central
+                    to all we do.</p>
+
+                <hr class="solid my-5">
+
+                <div class="toggle toggle-primary m-0" data-plugin-toggle>
+                    <section class="toggle active">
+                        <a class="toggle-title">We will build relationships.</a>
+                        <div class="toggle-content">
+                            <p>We will establish a positive and professional relationship with you and lay the groundwork for our future collaboration. We feel that behaving in a friendly, open, and enthusiastic manner will enhance our relationship with you.</p>
+                        </div>
+                    </section>
+
+                    <section class="toggle">
+                        <a class="toggle-title">We will demonstrate trust and respect. </a>
+                        <div class="toggle-content">
+                            <p>In every interaction, we will cherish your trust and show mutual respect. We'll pay attention to your needs and use all of our experience and resources to make sincere recommendations for improving your financial situation.</p>
+                        </div>
+                    </section>
+
+                    <section class="toggle">
+                        <a class="toggle-title">We will partner for security.</a>
+                        <div class="toggle-content">
+                            <p>We will respect your privacy and do everything we can to keep your information secure in our systems, processes, and procedures, as well as educate you on how to protect your identity, privacy, and private information.</p>
+                        </div>
+                    </section>
+
+                    <section class="toggle">
+                        <a class="toggle-title">We will be ambassadors.</a>
+                        <div class="toggle-content">
+                            <p>We will act as ambassadors at all times, because we know that our actions and interactions with you and within the communities we serve are a reflection of us. We will carry this through in everything we do.</p>
+                        </div>
+                    </section>
+
+                    <section class="toggle">
+                        <a class="toggle-title">We will show commitment.</a>
+                        <div class="toggle-content">
+                            <p>Every day, we will devote our entire attention to servicing you. Your requests will be handled with a sense of urgency and a genuine gratitude for your time and business.</p>
+                        </div>
+                    </section>
+
+                    <section class="toggle">
+                        <a class="toggle-title">We will do the right thing.</a>
+                        <div class="toggle-content">
+                            <p>We will make decisions based on honesty, ethics, and collaboration. We take responsibility for every interaction you have with our company and endeavor to offer you with the best possible service.</p>
+                        </div>
+                    </section>
+
+                    
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-4 mt-4 mt-md-0">
+                <h4 class="text-primary">Quick links</h4>
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item"><a class="nav-link " href="{% url 'mission' %}">Our Mission and
+                            Vision</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'expectation' %}">Service Expectations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'career' %}">sustainability</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+{% endblock content %}

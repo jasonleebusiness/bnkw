@@ -1,0 +1,148 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Transfer to a {{settings.company}} Account | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content%}
+{% load crispy_forms_tags %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+        <!-- Add Order -->
+
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Account</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Internal Transfer</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-9 col-lg-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Transfer to a {{settings.company}} Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                         
+                            <form method="post">
+                                {% csrf_token %}
+                                <label>Select an Account</label>
+                                <div class="form-group">
+                                   <!-- {{form.account}} -->
+                                   <select class="form-control custom-select" name="account">
+                                       {% for rs in accounts %}
+                                    <option value="{{rs.id}}">{{rs.get_account_type_display}} - {{rs.currency }} {{rs.balance|intcomma}}</option>
+                                    {% endfor %}
+                                    <!-- <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option> -->
+                                </select>
+                                </div>
+                                <label>Amount  <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <input type="number" name="amount" class="form-control input-rounded"
+                                        placeholder="" required>
+                                </div>
+
+
+                                <label>Beneficiary Account Name <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <input type="text" name="beneficiary" value="{{f_ctx.beneficiary}}" class="form-control input-rounded"
+                                        required>
+                                    <!-- {{form.beneficiary}} -->
+                                </div>
+                                <label>Beneficiary Account Number <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <input type="text" name="bank_acc" value="" class="form-control input-rounded"
+                                        placeholder="" required>
+                                </div>
+                                <label>Beneficiary Phone Number</label>
+                                <div class="form-group">
+                                    <input type="text" name="phone" class="form-control input-rounded "
+                                        placeholder="" value="">
+                                </div>
+                                <label>Beneficiary Email</label>
+                                <div class="form-group">
+                                    <input type="email" name="email" value="" class="form-control input-rounded"
+                                        placeholder="" >
+                                </div>
+                                <label>Beneficiary Bank Name <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <input type="text" name="bank" value="{{settings.title}}"  readonly class="form-control input-rounded"
+                                        placeholder="" required>
+                                </div>
+                                
+                                <label>Bank Address </label>
+                                <div class="form-group">
+                                    <input type="text" name="address" class="form-control input-rounded"
+                                        placeholder="" value="{{f_ctx.address}}" >
+                                </div>
+                                <label>Zip / Postal</label>
+                                <div class="form-group">
+                                    <input type="text" name="zip" class="form-control input-rounded" value="{{f_ctx.zip}}"
+                                        placeholder="" >
+                                </div>
+                                <label>Swift Code / BIC Code <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <input type="text" name="swift" class="form-control input-rounded"
+                                        >
+                                </div>
+                                <label>Routing Number / Sort Code</label>
+                                <div class="form-group">
+                                    <input type="number" name="routing" class="form-control input-rounded"
+                                        placeholder="" >
+                                </div>
+                                <label>IBAN</label>
+                                <div class="form-group">
+                                    <input type="text" name="iban" class="form-control input-rounded"
+                                        placeholder="" >
+                                </div>
+                                <label>Country <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <select class="form-control custom-select" name="country" readonly id="sel1">
+                                        <option value="US">United States of America</option>
+                                        
+                                    </select>
+                                    <!-- <input type="text" name="country" class="form-control input-rounded"
+                                    value="US" readonly required> -->
+                                    <img class="country-select-flag" id="flag_id_country" style="margin: 6px 4px 0" src="/static/flags/us.gif">
+                                </div>
+                                
+                                <label>Description / Remarks / Purpose</label>
+                                <div class="form-group">
+                                    <textarea class="form-control " name="description" rows="4" id="comment"></textarea>
+
+                                </div>
+                                
+                                
+                                <div class="justify-content-center text-center" id="transferbutton">
+                                    <div class="form-group text-center">
+                                        <button type="submit" hx-confirm="You are about to initiate a Fund Transfer from your Account. You are advised to fill all required fields carefully, as any error made may lead to delay in transfer of Fund to designated account. continue?" hx-post="{% url 'transferinternal' %}" hx-target="#transferbutton"  class="btn btn-primary" width="250px">Make Transfer.</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

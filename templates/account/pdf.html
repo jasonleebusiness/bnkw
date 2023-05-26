@@ -1,0 +1,139 @@
+{% load humanize %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Transaction Receipt</title>
+  <style type="text/css">
+    body {
+      font-weight: 200;
+      font-size: 14px;
+    }
+
+    .header {
+      font-size: 20px;
+      font-weight: 100;
+      text-align: center;
+      color: #007cae;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 100;
+      /* text-align: right;*/
+      padding: 10px 20px 0px 20px;
+    }
+
+    .title span {
+      color: #007cae;
+    }
+
+    .details1 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+      /*margin-left: 40%;*/
+    }
+
+    .details2 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+     
+      /*margin-left: 40%;*/
+    }
+    .details3 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+      font-weight: 100;
+      font-size: 10px;
+      /*margin-left: 40%;*/
+    }
+
+    .hrItem {
+      border: none;
+      height: 1px;
+      /* Set the hr color */
+      color: #333;
+      /* old IE */
+      background-color: #fff;
+      /* Modern Browsers */
+    }
+  </style>
+</head>
+
+<body>
+  <div class='wrapper'>
+    <div class='header'>
+      <!-- <p class='title'>Invoice # </p> -->
+      <img src="{{setting.iconblue.path}}" alt="" style="width: 300px;">
+    </div>
+  </div>
+  <div>
+    <div class='details1'>
+      <strong>Batch No.:</strong> {{receipt.code}}<br />
+      <strong>Account:</strong> {{receipt.account.get_account_type_display}} ({{receipt.account.acc_no}}) <br />
+      <strong>Sender:</strong> {{receipt.user.first_name}} {{receipt.user.last_name}} <br>
+      <strong>Amount:</strong> <strong>{{receipt.account.currency}} {{receipt.amount|intcomma}}</strong>
+      <hr class='hrItem' />
+    </div>
+
+  </div>
+  <table id="customers" style="font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%;"
+    width="100%">
+    <tr>
+      <th
+        style="border: 1px solid #ddd; padding: 8px; padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #00aeef; color: white;"
+        align="left" bgcolor="#00aeef">Beneficiary</th>
+      <th
+        style="border: 1px solid #ddd; padding: 8px; padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #00aeef; color: white;"
+        align="left" bgcolor="#00aeef">Info</th>
+    </tr>
+
+    <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+      <td style="border: 1px solid #ddd; padding: 8px;">Account Name</td>
+
+      <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.beneficiary}}</td>
+            </tr>
+            
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;">Account Number</td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.bank_acc}} </td>
+            </tr>
+            
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;">Phone</td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{% if receipt.phone %}{{receipt.phone}}{% else %} Nil {% endif %}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;">Email</td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{% if receipt.email %}{{receipt.email}}{% else %} Nil {% endif %}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;">Bank </td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.bank}}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;">Method / Channel </td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.channel}}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"> <img src="{{receipt.qr_code.path}}" alt="" style="width:200px;" ></td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">QR Code</td>
+            </tr>
+           
+            
+          </table>
+         
+
+          <div class="details3">
+            <p><strong>Disclaimer:</strong> <br>
+              Your transfer was successful and the beneficiary's account will be credited. However, this does not serve as a confirmation of the credit into the beneficiary's account. Due to the nature of the internet, transactions maybe subject to interruption, transmission blackout, delayed transmission and incorrect data transmission. The Bank is not liable for malfunctions in communications facilities not within its control that may affect the accuracy or timeliness of the message and transactions you send. All transactions are subject to verification and checks. </p>
+          </div>
+</body>
+
+</html>

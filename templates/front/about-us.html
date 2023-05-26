@@ -1,0 +1,251 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>who we are - {{settings.name}}</title>
+<meta name="description"
+    content="{{settings.name}} has worked hard to provide our customers with the greatest banking experience possible since its inception. {{settings.name}} and its affiliates provide a wide range of financial services and products.">
+<!-- <meta name="author" content="{{settings.company}}"> -->
+<meta name="keywords"
+    content="{{settings.name}}, {{settings.title}}, Online banking, Credit cards, loans, mortgages, business banking, debit cards, international banking">
+
+{% endblock seo %}
+
+
+
+
+{% block content %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-dark"><strong>Who We Are</strong></h1> <span class="sub-title text-dark">We Are
+                        Dedicated To Your Success</span>
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                        <span>We are {{settings.title}}, We </span>
+                        <span class="word-rotator-words bg-primary" style="width: 90.6511px; overflow: hidden;">
+                            <b class="is-hidden">Create</b>
+                            <b class="is-visible">Build</b>
+                            <b class="is-hidden">Develop</b>
+                        </span>
+                        <span> Solutions</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="250"
+                        style="animation-delay: 250ms;">
+                        We provide first-rate and world-class services to our clients, and our key principles include:
+                        Excellence, Ethics, Trust, Teamwork, Customer Passion, and Continuous Learning in order to
+                        better serve you. We are completely customer-oriented, and our goal is to enable a people's
+                        growth and development by providing exceptional banking services and a competitive edge in loans
+                        and grants.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pt-4 mt-5">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 appear-animation animated fadeInLeftShorter appear-animation-visible"
+                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000"
+                style="animation-delay: 1000ms;">
+                <div class="owl-carousel owl-theme nav-inside mb-0 owl-loaded owl-drag owl-carousel-init"
+                    data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}"
+                    style="height: auto;">
+
+
+                    <img src="{% static '' %}assets2/images/Barclays-mediacity.jpeg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="overflow-hidden mb-2">
+                    <h1 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-5 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="1200"
+                        style="animation-delay: 1200ms;"><strong class="font-weight-extra-bold">Helping you make the most of your money.</strong>
+                    </h1>
+                </div>
+                <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                    data-appear-animation="maskUp" data-appear-animation-delay="250" style="animation-delay: 250ms;">
+                    {{settings.title}} is one of the world's largest financial organizations, providing a
+                    comprehensive range of banking, investing, asset management, and other financial and risk management
+                    products and services to individual customers, small and middle-market enterprises, and big
+                    corporations. {{settings.title}} serves approximately 47 million consumer and small business
+                    relationships in the United States through approximately 4,500 retail financial centers,
+                    approximately 16,000 ATMs, and award-winning digital banking with approximately 35 million active
+                    users, including approximately 24 million mobile users.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-1-full.jpg"
+                    style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Our
+                                        mission and vision</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">{{settings.title}} is committed to passionately
+                                    serving the best interests of our Members, team members, and communities.</p>
+
+                            </div>
+                            <a href="{% url 'mission' %}"
+                                class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2"
+                                data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right"
+                                        aria-hidden="true"></i></span></a>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 order-2 order-lg-1 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row justify-content-end m-0">
+                        <div class="col-half-section col-half-section-right custom-text-align-right">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Service
+                                        Expectations</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">Because our Members are owners in a financial
+                                    cooperative, offering outstanding service is central to all we do.</p>
+                            </div>
+                            <a href="{% url 'expectation' %}"
+                                class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2"
+                                data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right"
+                                        aria-hidden="true"></i></span></a>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 p-0">
+                <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax
+                    data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-2-full.jpg"
+                    style="min-height: 315px;">
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-3-full.jpg"
+                    style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Careers</a>
+                                </h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">We grow together by connecting great people to
+                                    great opportunities. At {{settings.title}}, we believe that building relationships
+                                    matters, and that begins with a diverse and inspired workforce.</p>
+                            </div>
+                            <a href="{% url 'career' %}"
+                                class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2"
+                                data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right"
+                                        aria-hidden="true"></i></span></a>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <section class="call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3><strong class="font-weight-extra-bold">Open an account</strong> </h3>
+                        <p class="mb-0">Get started today, and enjoy the financial benefits.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'register' %}" class="btn btn-modern text-2 btn-primary">Open an
+                            Account</a><span
+                            class="arrow hlb d-none d-md-block appear-animation animated rotateInUpLeft appear-animation-visible"
+                            data-appear-animation="rotateInUpLeft"
+                            style="left: 110%; top: -40px; animation-delay: 100ms;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+{% endblock content %}

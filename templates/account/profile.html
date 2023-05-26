@@ -1,0 +1,293 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Account profile | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content%}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+        <!-- Add Order -->
+
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Account</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="profile card card-body px-3 pt-3 pb-0">
+                    <div class="profile-head">
+                        <div class="photo-content">
+                            <div class="cover-photo" style="background: {% static '' %}assets/images/profile/profilebg.png;"></div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-photo">
+                                <img src="{{profile.image.url}}" class="img-fluid rounded-circle" alt="">
+                            </div>
+                            <div class="profile-details">
+                                <div class="profile-name px-3 pt-2">
+                                    <h4 class="text-primary mb-0">{{request.user.first_name}}
+                                        {{request.user.last_name}}</h4>
+                                    <p>{{request.user.username}}</p>
+                                </div>
+                                <!-- <div class="profile-email px-2 pt-2">
+											<h4 class="text-muted mb-0">{{profile.image.url}}</h4>
+											<p>Email</p>
+										</div> -->
+                                <!-- <div class="dropdown ml-auto">
+											<a href="#" class="btn btn-primary light sharp" data-toggle="dropdown" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i> View profile</li>
+												<li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i> Add to close friends</li>
+												<li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i> Add to group</li>
+												<li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> Block</li>
+											</ul>
+										</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-tab">
+                            <div class="custom-tab-1">
+                                <ul class="nav nav-tabs">
+                                    <!-- <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Posts</a>
+                                            </li> -->
+                                    <li class="nav-item"><a href="#about-me" data-toggle="tab"
+                                            class="nav-link active show">Personal Information</a>
+                                    </li>
+                                    <li class="nav-item"><a href="#profile-pic" data-toggle="tab"
+                                            class="nav-link">Update Profile Picture</a>
+                                    </li>
+                                    <li class="nav-item"><a href="#profile-settings" data-toggle="tab"
+                                            class="nav-link">Settings</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div id="about-me" class="tab-pane fade active show">
+
+                                        <div class="profile-lang  mb-5 mt-5">
+                                            <h4 class="text-primary mb-2">Account Type</h4>
+                                            <a href="javascript:void()" class="text-muted pr-3 f-s-16"><i
+                                                    class="flag-icon flag-icon-us"></i> {{account.get_account_type_display}}</a>
+
+                                        </div>
+                                        <div class="profile-skills mb-5">
+                                            <h4 class="text-primary mb-2">Status</h4>
+                                            <a href="javascript:void()"
+                                                class="btn btn-success light btn-xs mb-1">Active</a>
+
+                                        </div>
+
+                                        <div class="profile-personal-info">
+                                            <h4 class="text-primary mb-4">Personal Information</h4>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Name <span
+                                                            class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.get_full_name}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Email <span
+                                                            class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.email}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Phone <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.phone}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Address <span
+                                                            class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.address}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">City <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.city}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">State <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.state}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Zip Code <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.zip}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Country <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9"><span>{{request.user.userprofile.country.name}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Date Of Birth <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{request.user.userprofile.dob|date:"SHORT_DATE_FORMAT"}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Occupation <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{request.user.userprofile.occupation}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">Annual Income <span
+                                                            class="pull-right d-none d-sm-block"></span></h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>${{request.user.userprofile.annual_income|intcomma}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="profile-pic" class="tab-pane fade">
+                                        <div class="pt-3">
+                                            <div class="row">
+                                                
+                                                <div class="settings-form col-md-12 col-lg-6 col-sm-12">
+                                                    <h4 class="text-primary mt-5">Update Profile Picture</h4>
+                                                    <form method="post" action="{% url 'user_update_pic' %}" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        
+                                                       <label>Upload</label>
+                                                        <div class="form-group mb-3">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input " accept="image/*" name="image" id="id_image">
+                                                                <label class="custom-file-label">Choose file</label>
+                                                                
+                                                                
+                                                            </div>
+                        
+                        
+                                                            
+                                                        </div>
+                                                        <!-- {{form|crispy}} -->
+                                                        
+                                                        <div class="justify-content-center">
+                                                            <div class="form-group ">
+                                                                <button type="submit" class="btn btn-primary">Update now</button>
+                                                            </div>
+                                                        </div>
+                        
+                                                    </form>
+                                                </div>
+
+                                               
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="profile-settings" class="tab-pane fade">
+                                        <div class="pt-3">
+                                            <div class="row">
+                                                <!-- password -->
+                                                <div class="settings-form col-md-12 col-lg-6 col-sm-12">
+                                                    <h4 class="text-primary mt-5">Update Password</h4>
+                                                    <form action="{% url 'user_password' %}" method="post">
+                                                        {% csrf_token %}
+
+                                                        <div class="form-group">
+                                                            <label> Current Password</label>
+                                                            <input type="password" autocomplete="current-password"
+                                                                id="id_old_password" name="old_password"
+                                                                 required
+                                                                class="form-control input-rounded">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label> New Password</label>
+                                                            <input type="password" autocomplete="new-password"
+                                                                id="id_new_password1" name="new_password1"
+                                                                required
+                                                                class="form-control input-rounded">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Repeat Password</label>
+                                                            <input type="password" autocomplete="new-password"
+                                                                id="id_new_password2" name="new_password2"
+                                                                 required
+                                                                class="form-control input-rounded">
+                                                        </div>
+                                                        <button class="btn btn-primary" type="submit">Change
+                                                            Password</button>
+                                                    </form>
+                                                </div>
+
+                                                <!-- pin -->
+                                               
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

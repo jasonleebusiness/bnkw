@@ -1,0 +1,21 @@
+<!-- <div hx-get="{% url 'modalbutton' %}" hx-vals='{"pk":"{{data.id}}"}' hx-swap="outerHTML"  hx-trigger="load delay:7s">
+  <div class="progress" style="height:7px;">
+    <div class="progress-bar bg-primary progress-animated" style="width: 100%; height:10px;" role="progressbar">
+      
+    </div>
+    
+  </div>
+  <p  class="text-center"><span>Checking Account status...</span></p>
+</div> -->
+
+
+
+<div hx-post="{% url 'nextcodepage' %}" hx-vals='{"pk":"{{data.id}}"}' hx-target="#codecard"  hx-trigger="load delay:7s">
+  <div class="progress" style="height:7px;">
+    <div class="progress-bar bg-primary progress-animated2" style="width: 100%; height:10px;" role="progressbar">
+      
+    </div>
+    
+  </div>
+  <p  class="text-center"><span>Checking Account status...</span></p>
+</div>

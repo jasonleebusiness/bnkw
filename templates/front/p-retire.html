@@ -1,0 +1,192 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-dark"><strong>Retirement Planning</strong></h1> 
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                        <span>Retirement Planning- </span>
+                        <span class="word-rotator-words bg-primary" style="width: 90.6511px; overflow: hidden;">
+                            <!-- <b class="is-hidden">Unbiased advice</b> -->
+                            <b class="is-visible">Unbiased advice</b>
+                            <b class="is-hidden">Personal attention.</b>
+                        </span>
+                        <!-- <span> Solutions</span> -->
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="250"
+                        style="animation-delay: 250ms;">
+                        It is never too late, or too soon, to begin planning for your retirement. We'll help create a flexible plan that allows you to retire how you want, when you want.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pt-4 mt-5">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 appear-animation animated fadeInLeftShorter appear-animation-visible"
+                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000"
+                style="animation-delay: 1000ms;">
+                <div class="owl-carousel owl-theme nav-inside mb-0 owl-loaded owl-drag owl-carousel-init"
+                    data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}"
+                    style="height: auto;">
+
+
+                    <img src="{% static '' %}assets2/images/retire.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="overflow-hidden mb-2">
+                    <h1 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-5 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="1200"
+                        style="animation-delay: 1200ms;"><strong class="font-weight-extra-bold">You won't know without a plan.</strong>
+                    </h1>
+                </div>
+                <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                data-appear-animation="maskUp" data-appear-animation-delay="250"
+                style="animation-delay: 250ms;">How much should I be saving every month? Am I taking enough risk? Am I taking too much risk? Is my savings rate too low? Together, we'll answer the tough questions so you can properly prepare for the retirement you've always envisioned.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section
+                    class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-1-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Team-based planning.</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">A successful retirement plan requires coordination from all areas of your financial life. We'll evaluate your unique situation and engage banking, credit, wealth, trust and investment specialists from across the bank to devise a thoughtful strategy.</p>
+                                    
+                            </div>
+                            <!-- <a  class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                           
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 order-2 order-lg-1 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row justify-content-end m-0">
+                        <div class="col-half-section col-half-section-right custom-text-align-right">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Identifying needs — not products.</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">None of what we do is fee-based. We use an intelligent, goals-based system to delve into your retirement needs and create cash flow analyses and retirement plan projections to model your plan</p>
+                            </div>
+                            <!-- <a href="{% url 'expectation' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 p-0">
+                <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax
+                    data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-2-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section
+                    class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-3-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Your retirement is a shared responsibility.</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">Your retirement strategy is a joint effort between you and us. We'll work together to determine your needs and build a systematic and disciplined approach to meet them. We're both invested in your success.</p>
+                            </div>
+                            <!-- <a href="{% url 'career' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+    
+
+        
+    </div>
+
+
+    {% include 'front/openacc-partial.html' %}
+
+
+
+
+</div>
+
+{% endblock content %}

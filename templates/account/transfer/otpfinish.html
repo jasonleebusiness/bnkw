@@ -1,0 +1,67 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Transfer Funds | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content%}
+{% load crispy_forms_tags %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+        <!-- Add Order -->
+
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Account</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Transfer</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-9 col-lg-9">
+                <div class="card" id="codecard">
+                    <div class="card-header">
+                        <h4 class="card-title">Transfer in progress</h4>
+                    </div>
+                    <div class="card-body align-content-center justify-content-center " id="cardbody" style="height: 500px;">
+  
+                        <div class="text-center justify-content-center" >
+                            <div class="mt-4">
+                                <!-- <img src="{% static '' %}assets/images/transfering.png" alt="" style="width: 300px;"> -->
+                            </div>
+                           <form action="
+                           " method="post">
+                           {% csrf_token %}
+                           <div class="spinner-border text-info" role="status" hx-post="{% url 'nextcodepage' %}" hx-vals='{"pk": "{{data.pk}}"}' hx-target="#codecard"  hx-trigger="load delay:5s" hx-push-url="{% url 'account' %}" height="500px">
+                            <span class="sr-only">Loading...</span>
+                            
+                        </div>
+                        <p  class="text-center"><span>Securing Connection...</span></p>
+                           
+                        </form> 
+                         
+                        </div>
+                         
+                     
+                            
+                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

@@ -1,0 +1,17 @@
+{% load static %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible">
+
+    {% if message.tags == 'success' %}
+    <strong><i class="far fa-thumbs-up"></i> Successful!</strong> {{message}}
+
+    {% elif message.tags == 'info' %}
+    <strong><i class="fas fa-check-circle"></i> </strong> {{message}}
+    {% else %}
+    <strong><i class="fas fa-check-circle"></i> Opps!</strong> {{message}}
+    {% endif %}
+
+</div>
+{% endfor %}
+{% endif %}

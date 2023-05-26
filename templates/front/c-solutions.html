@@ -1,0 +1,149 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block head %}
+
+	<!-- Demo CSS -->		<link rel="stylesheet" href="{% static '' %}assets2/css/demos/demo-seo.css">
+
+		<!-- Skin CSS -->		<link id="skinCSS" rel="stylesheet" href="{% static '' %}assets2/css/skins/skin-seo.css">
+{% endblock head %}
+
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+<div role="main" class="main">
+				
+    <div class="container position-relative " style="min-height: 500px;" id="home">
+        <svg class="custom-svg-style-1" viewBox="0 0 180 470" x="0px" y="0px" width="100%" height="100%">
+            <g>
+                <path id="shape_one_start" opacity="0.098" fill="#00a3d5" d="M 847.5703 23.7939 C 847.5703 23.7939 581.8154 -245.1675 394.2842 33.9375 C 305.4043 166.2183 345.0537 358.8125 253.5615 364.6631 C 162.0684 370.5146 129.5303 342.542 70.9883 383.9072 C 3.0254 431.9297 17.8926 499.2158 17.8926 499.2158 L 847.5703 499.2158 L 847.5703 23.7939 Z" />
+                <path id="shape_one_end" opacity="0.098" fill="#00a3d5" d="m847.5703,24.7939c0,0 -85.7549,-346.9614 -273.2861,-67.8564c149.1201,176.2808 52.7695,313.875 -46.7227,312.7256c-99.4922,-1.1494 -59.0312,107.8789 -117.5732,149.2441c-67.9629,48.0225 -186.0957,167.3086 -207.0957,167.3086l644.6777,-86l0,-475.4219z" style="visibility:hidden" />
+
+                <path id="shape_two_start" opacity="0.149" fill="#00a3d5" d="M 847.5703 239.9771 C 847.5703 239.9771 806.873 141.5913 733.1348 164.937 C 622.249 200.0459 648.416 318.083 566.6426 342.042 C 484.8682 365.999 247.9814 345.0283 168.6406 371.8037 C 89.3008 398.5781 85.5703 499.3408 85.5703 499.3408 L 847.5693 499.3408 L 847.5703 239.9771 Z" /> 
+                <path id="shape_two_end" opacity="0.149" fill="#00a3d5" d="m907.5703,89.9771c0,0 29.3027,-9.3858 -95.4355,112.9599c-124.7382,122.3457 -254.7188,64.146 -300.4922,167.105c-45.7734,102.959 -79.6612,61.9863 -209.002,106.7617c-129.3408,44.7754 -218.0703,21.5371 -218.0703,21.5371l761.999,0l0.001,-265.3637z" style="visibility:hidden" /> 								
+            </g>
+        </svg>
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6 pt-4 pt-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
+                <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                    <h1 class="text-color-dark font-weight-extra-bold text-10 text-md-12-13 line-height-1 text-center mb-2 mb-4 mb-md-0 mb-xl-3" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 1, 'transition': true, 'horizontal': false}"><strong>Commercial banking solutions that fund your future</strong></h1>
+                </div>
+                <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+                    <p class="text-4 mb-5 mb-md-2" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 0.5, 'transition': true, 'horizontal': false}">Manage your money with a commercial checking account and a team of professionals working strategically together to help you set and achieve your short- and long-term business goals</p>
+                </div>
+               
+            </div>
+            <div class="col-lg-6 text-center mt-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="550">
+                <img src="{% static '' %}assets2/images/seo-charts.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 8, 'transition': true, 'horizontal': true}" />
+            </div>
+        </div>
+    </div>
+
+    <section class="section bg-secondary border-0 m-0 call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3><strong class="font-weight-extra-bold">Open an account</strong> </h3>
+                        <p class="mb-0">Get started today, and enjoy the financial benefits.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'register' %}" class="btn btn-rounded text-2 btn-primary">Open an Account</a><span class="arrow hlb d-none d-md-block appear-animation animated rotateInUpLeft appear-animation-visible" data-appear-animation="rotateInUpLeft" style="left: 110%; top: -40px; animation-delay: 100ms;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
+    <div class="container py-5 my-4" id="about">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-md-5 mb-lg-0">
+               <img src="{% static '' %}assets2/images/bizowner.jpg" alt="" style="width: 100%;">
+            </div>
+            <div class="col-lg-7 ps-lg-5">
+                <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+                    <h2 class="font-weight-bold line-height-2 text-7 mb-1">Keep your business moving forward</h2>
+                    <!-- <span class="d-block text-color-dark text-5 pb-2 mb-4 opacity-7">Who We Are</span> -->
+                </div>
+                <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">From business banking accounts to risk management tools, we help you find the personalized services you need, when you need them. Partner with our experienced bankers to help grow your business, now and into the future.</p>
+                <!-- <a data-hash data-hash-offset="0" data-hash-offset-lg="95" href="#solutions" class="btn btn-primary btn-primary btn-rounded font-weight-semibold text-3 btn-px-5 btn-py-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">Our Solutions</a> -->
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container py-5 mb-5" id="solutions">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="font-weight-bold line-height-2 text-7 mb-1">Solutions</h2>
+                <span class="d-block text-color-dark text-5 pb-2 mb-4 opacity-7">Services</span>
+            </div>
+        </div>
+        <div class="content-grid">
+            <div class="row content-grid-row text-center">
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-file-invoice-dollar fa-5x text-primary mb-3"></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">Commercial Bank Accounts</h3>
+                    <p class="mb-0">We're passionate about meeting your goals. Let's work together to easily and safely manage your commercial bank accounts.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-hand-holding-usd fa-5x text-primary mb-3"></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">Credit & Financing</h3>
+                    <p class="mb-0">With over 100 years of experience, our insightful commercial bankers help you prepare for your business's changing needs.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-globe fa-5x text-primary mb-3"></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">International Banking</h3>
+                    <p class="mb-0">Our international banking solutions help to ensure your overseas transactions are simple, secure and timely.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-sign fa-5x text-primary mb-3 "></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">Commercial Real Estate</h3>
+                    <p class="mb-0">Grow your commercial real estate business. Let us lend a hand when you make your first big property investment.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-tools fa-5x text-primary mb-3"></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">Risk Management</h3>
+                    <p class="mb-0">Identifying business risk with a consultative approach</p>
+                </div>
+                <div class="col-md-6 col-lg-4 content-grid-item flex-column p-5">
+                    <i class="fas fa-cash-register fa-5x text-primary mb-3"></i>
+                    <h3 class="font-weight-semibold text-transform-none text-5 mb-3">Treasury Management</h3>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="{% url 'contactus' %}" class="btn btn-primary btn-primary btn-rounded popup-with-form font-weight-semibold text-4 btn-px-5 btn-py-2">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+   
+   
+   
+   
+   
+  
+
+</div> 
+
+
+
+{% endblock content %}
+
+{% block script %}
+
+<script src="{% static '' %}assets2/js/demos/demo-seo.js"></script>
+<script src="{% static '' %}assets2/js/views/view.contact.js"></script>
+{% endblock script %}

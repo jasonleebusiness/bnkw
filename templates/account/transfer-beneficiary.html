@@ -1,0 +1,92 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Transfer To Beneficiary | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content%}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+       
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Account</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Transfer to Beneficiary</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-9 col-lg-9">
+                <div class="card" id="codecard">
+                    <div class="card-header">
+                        <h4 class="card-title">Transfer to Beneficiary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            {% if beneficiaries %}
+                            <form method="post" action="{% url 'transfer_beneficiary' %}">
+                                {% csrf_token %}
+                                <label>Select an Account</label>
+                                <div class="form-group">
+                                   <!-- {{form.account}} -->
+                                   <select class="form-control custom-select" name="account" >
+                                       {% for rs in accounts %}
+                                    <option value="{{rs.id}}">{{rs.get_account_type_display}} - {{rs.currency }} {{rs.balance|intcomma}}</option>
+                                    {% endfor %}
+                              
+                                </select>
+                                </div>
+                                <label>Beneficiary </label>
+                                <div class="form-group">
+                                    <select class="form-control custom-select form-control-lg" name="query">
+                                        {% for rs in beneficiaries %}
+                                        <option value="{{rs.id}}">{{rs.name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <label>Amount </label>
+                                <div class="form-group">
+                                    <input type="number" name="amount" class="form-control input-rounded"
+                                        placeholder="Amount ($)" required>
+                                </div>
+                                <label>Narration</label>
+                                <div class="form-group">
+                                    <textarea class="form-control " name="description" rows="4" id="comment"></textarea>
+                                </div>
+                               
+                                <div class="justify-content-center text-center" id="transferbutton">
+                                    <div class="form-group text-center">
+                                        <button type="submit" hx-confirm="You are about to initiate a Fund Transfer from your Account. You are advised to fill all required fields carefully, as any error made may lead to delay in transfer of Fund to designated account. continue?" hx-post="{% url 'transfer_beneficiary' %}" hx-target="#transferbutton"  class="btn btn-primary" width="250px">Make Transfer</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                            {% else %}
+                            <div class="justify-content-center text-center">
+                                <p>No record found</p>
+                            <a href="{% url 'add_beneficiary' %}" class="btn btn-primary btn-rounded">Add Beneficiary</a>
+                            
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

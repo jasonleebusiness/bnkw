@@ -1,0 +1,263 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+
+{% block seo %}
+<title>Personal Checking Account | {{settings.title}}</title>
+<meta name="description" content="Open a personal checking account with {{settings.company}} online and bank from anywhere on any device. Choose from one of our three checking accounts: Free, Premier, or Prestige.">
+<!-- <meta name="author" content="{{settings.company}}"> -->
+<meta name="keywords" content="{{settings.title}}, {{settings.name}}, Open an account, Online banking, Credit cards, Checking account">
+{% endblock seo %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static '' %}assets2/css/demos/demo-business-consulting-4.css">
+
+<link id="skinCSS" rel="stylesheet" href="{% static '' %}assets2/css/skins/skin-business-consulting-4.css">
+
+{% endblock head %}
+
+
+
+
+{% block content %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern page-header-background page-header-background-md py-0 overlay overlay-color-primary overlay-show overlay-op-8" style="background-image: url({% static '' %}assets2/img/page-header/page-header-background-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 order-2 order-sm-1 align-self-center p-static">
+                    <div class="overflow-hidden">
+                        <ul class="breadcrumb breadcrumb-light d-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
+                            <li><a href="#">Choose the checking account that best meets your needs.</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="overflow-hidden pb-2">
+                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300"><strong>You get control with the correct checking account.</strong></h1>
+                    </div>
+                    <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <span class="sub-title text-4 mt-4 text-white">With Barclays Bank, you can stay in charge of your money by receiving spending insights, adjustable security controls, and other benefits.</span>
+                    </div>
+                    <!-- <div class="appear-animation d-inline-block" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <a href="#" class="btn btn-modern btn-dark mt-4">Buy Now <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                    <div class="appear-animation d-inline-block" data-appear-animation="rotateInUpRight" data-appear-animation-delay="500">
+                        <span class="arrow hlt" style="top: 40px;"></span>
+                    </div> -->
+                </div>
+                <div class="col-sm-7 order-1 order-sm-2 align-items-center justify-content-center d-flex pt-5">
+                    <div style="min-height: 250px;" class="overflow-hidden">
+                        <img  alt="" src="{% static '' %}assets2/images/mobile-app.png" style="width: 150px;" class="img-fluid appear-animation" data-appear-animation="slideInUp" data-appear-animation-delay="600" data-appear-animation-duration="1s">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
+    <section class="section border-0 bg-transparent m-0" id="start">
+        <div class="container py-5 mb-3">
+            <div class="row">
+                <div class="col text-center">
+
+                    <div class="divider divider-small divider-small-lg mt-0 text-center appear-animation"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0">
+                        <hr class="bg-primary border-radius m-auto">
+                    </div>
+                    <div class="overflow-hidden mb-1">
+                        <!-- <h3 class="font-weight-semi-bold text-color-grey text-uppercase positive-ls-3 text-4 line-height-2 line-height-sm-7 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Our Mission</h3> -->
+                    </div>
+                    <h2 class="text-color-dark font-weight-bold text-8 pb-2 mb-4 appear-animation"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Features & Benefits
+                    </h2>
+
+                </div>
+            </div>
+            <div class="row pt-4 pb-5">
+                <div class="col-lg-6 text-center p-relative pt-5">
+
+                    <div class="appear-animation custom-element-wrapper custom-element-9"
+                        data-appear-animation="expandIn" data-appear-animation-delay="1000">
+                        <div class="bg-color-primary particle particle-dots w-100 h-100 opacity-3"></div>
+                    </div>
+
+                    <div class="appear-animation custom-element-wrapper custom-element-10"
+                        data-appear-animation="expandIn" data-appear-animation-delay="1200">
+                        <div class="bg-color-primary particle particle-dots w-100 h-100 opacity-3"></div>
+                    </div>
+
+                    <div class="appear-animation custom-element-wrapper custom-element-11 p-relative rotate-r-45"
+                        data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                        <img class="img-fluid"
+                            src="{% static '' %}assets2/images/generic-6-01.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="col-lg-6 pt-5 mt-5 pt-lg-0 mt-lg-0">
+                    <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                        <p class="font-weight-medium text-4-5 line-height-5">Many of our clients' personal banking connections begin with a checking account. Choose from a variety of account types to begin your enhanced banking experience.</p>
+
+                        <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                            <li class="line-height-9 text-3-5 mb-1">
+                                <i class="fas fa-check border-width-2 text-3"></i>Keep Your Money Secure
+                            </li>
+                            <li class="line-height-9 text-3-5 mb-1">
+                                <i class="fas fa-check border-width-2 text-3"></i>Online & Mobile Banking
+                            </li>
+                            <li class="line-height-9 text-3-5 mb-1">
+                                <i class="fas fa-check border-width-2 text-3"></i>Earn Interest
+                            </li>
+                        </ul>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section border-0 bg-quaternary m-0">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col col-lg-9 text-center">
+
+                    <div class="divider divider-small divider-small-lg mt-0 text-center appear-animation"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0">
+                        <hr class="bg-primary border-radius m-auto">
+                    </div>
+                    <div class="overflow-hidden mb-1">
+                   
+                    </div>
+                    <h2 class="text-color-dark font-weight-bold text-8 pb-4 mb-0 appear-animation"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Compare Checking Accounts
+                    </h2>
+
+                   
+
+                </div>
+            </div>
+
+            <div class="row py-5 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div
+                        class="card card-border card-border-top card-border-hover bg-color-light border-0 box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms anim-hover-inner-wrapper">
+                        <div class="card-body p-relative zindex-1 p-5 text-center">
+                            <div class="anim-hover-inner-translate-top-20px transition-3ms">
+                                <img width="72" height="73"
+                                    src="{% static '' %}assets2/img/icons2/icons/icon-1.svg" alt=""
+                                    data-icon
+                                    data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                                <h4 class="card-title mt-4 mb-2 text-5 font-weight-bold">Personal Checking Plus</h4>
+                                <p class="card-text text-3-5">This checking account provides additional benefits like no monthly maintenance fees on a savings or money market account.</p>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold">Monthly Maintenance Fee</h6>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold text-primary">$25</h6>
+                                <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No monthly maintenance fee when balance or direct deposit requirements are met.
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No Bank fee for ATM withdrawals at non-City National Bank ATMs.
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No monthly maintenance fee on a Savings or Money Market Account
+                                    </li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div
+                        class="card card-border card-border-top card-border-hover bg-color-light border-0 box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms anim-hover-inner-wrapper">
+                        <div class="card-body p-relative zindex-1 p-5 text-center">
+                            <div class="anim-hover-inner-translate-top-20px transition-3ms">
+                                <img width="72" height="73"
+                                    src="{% static '' %}assets2/img/icons2/icons/icon-2.svg" alt=""
+                                    data-icon
+                                    data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                                <h4 class="card-title mt-4 mb-2 text-5 font-weight-bold">Premium Checking Account</h4>
+                                <p class="card-text text-3-5">A premium interest-bearing checking account packaged with up to three additional accounts and other services.</p>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold">Monthly Maintenance Fee</h6>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold text-primary">$35</h6>
+                                <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No monthly maintenance fee when balance requirements are met.
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No monthly maintenance fees for up to three additional checking or savings accounts.
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>Interest rates increase as balances increase.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="w-100 text-center p-absolute opacity-0 bottom-30 left-0 transformY-p100 anim-hover-inner-opacity-10 anim-hover-inner-translate-top-0px transition-4ms">
+                                <a href="demo-business-consulting-4-services-detail.html"
+                                    class="read-more text-color-primary font-weight-semibold mt-2 text-2">Learn More <i
+                                        class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div
+                        class="card card-border card-border-top card-border-hover bg-color-light border-0 box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms anim-hover-inner-wrapper">
+                        <div class="card-body p-relative zindex-1 p-5 text-center">
+                            <div class="anim-hover-inner-translate-top-20px transition-3ms">
+                                <img width="72" height="73"
+                                    src="{% static '' %}assets2/img/icons2/icons/icon-3.svg" alt=""
+                                    data-icon
+                                    data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                                <h4 class="card-title mt-4 mb-2 text-5 font-weight-bold">Preferred Platinum Checking</h4>
+                                <p class="card-text text-3-5">Enjoy Preferred Banking benefits like complimentary wealth planning, cash flow advice and more with this checking account.</p>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold">Monthly Maintenance Fee</h6>
+                                <h6 class="card-title mt-4 mb-2 text-5 font-weight-bold text-primary">$50</h6>
+                                <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>No monthly maintenance fee when balance requirements are met.
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>Complimentary wealth planning
+                                    </li>
+                                    <li class="line-height-9 text-3-5 mb-1">
+                                        <i class="fas fa-check border-width-2 text-3"></i>Interest rates increase as balances increase.
+                                    </li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-lg-9 text-center">
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+</div>
+
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static '' %}assets2/js/demos/demo-business-consulting-4.js"></script>
+{% endblock script %}

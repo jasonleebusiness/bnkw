@@ -1,0 +1,56 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Transfer Funds | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content%}
+{% load crispy_forms_tags %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+        <!-- Add Order -->
+
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Account</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Transfer</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-9 col-lg-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Transfer Completed</h4>
+                    </div>
+                    <div class="card-body text-center justify-content-center" id="cardbody">
+
+                          <div class="basic-form">
+          
+                            <div class="spinner-border text-info" role="status" hx-get="{% url 'transferfinal' %}" hx-target="#cardbody" hx-vals='{"pk":"{{pk}}"}' hx-trigger="load delay:5s">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p>Finalizing Transfer...</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

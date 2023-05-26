@@ -1,0 +1,156 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static '' %}assets2/css/demos/demo-business-consulting-4.css">
+
+<link id="skinCSS" rel="stylesheet" href="{% static '' %}assets2/css/skins/skin-business-consulting-4.css">
+
+{% endblock head %}
+
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md py-0 overlay overlay-color-primary overlay-show overlay-op-8" style="background-image: url({% static '' %}assets2/img/page-header/page-header-background-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 order-2 order-sm-1 align-self-center p-static">
+                    <div class="overflow-hidden">
+                        <ul class="breadcrumb breadcrumb-light d-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
+                            <li><a href="#">Compare our credit cards</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="overflow-hidden pb-2">
+                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300"><strong>A choice of cards to make payments easier</strong></h1>
+                    </div>
+                    <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <span class="sub-title text-4 mt-4 text-white">We provide a variety of cards that you may use to make payments from your International Bank Account anywhere in the globe.</span>
+                    </div>
+                    <!-- <div class="appear-animation d-inline-block" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <a href="#" class="btn btn-modern btn-dark mt-4">Buy Now <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                    <div class="appear-animation d-inline-block" data-appear-animation="rotateInUpRight" data-appear-animation-delay="500">
+                        <span class="arrow hlt" style="top: 40px;"></span>
+                    </div> -->
+                </div>
+                <div class="col-sm-7 order-1 order-sm-2 align-items-end justify-content-end d-flex pt-5">
+                    <div style="min-height: 250px;" class="overflow-hidden">
+                        <img  alt="" src="{% static '' %}assets2/img/avios.png" class="img-fluid appear-animation" data-appear-animation="slideInUp" data-appear-animation-delay="600" data-appear-animation-duration="1s">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col">
+                <hr class="tall my-5">
+                <h4><strong>Our</strong> Credit Cards</h4>
+            </div>
+        </div>
+    
+        <div class="pricing-table mb-4">
+            <div class="col-md-12 col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h3>Barclaycard Avios </h3>
+                    </div>
+                   
+                    <div class="plan-features">
+                        <ul>
+                            <li>Pay down your other credit card balances with a great low introductory rate for an extended time.</li>
+                            <li>Save on interest.</li>
+                            <li>Non-Reward</li>
+                           
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h3>Barclaycard Avios Plus</h3>
+                    </div>
+                    
+                    <div class="plan-features">
+                        <ul>
+                            <li>$150 bonus reward (15,00 points) after you spend $500 within the first 90 days of account opening.</li>
+                            <li>4x unlimited points on dining, take-out & food delivery.</li>
+                            <li>2x unlimited points at grocery stores, grocery delivery, gas stations and streaming services.</li>
+                            <li>1x unlimited points on all other eligible purchases.</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="plan plan-featured">
+                    <div class="plan-header bg-primary">
+                        <h3>Barclaycard Rewards card</h3>
+                    </div>
+                   
+                    <div class="plan-features">
+                        <ul>
+                            <li>5% cash back on first $2,000 of combined quarterly purchases in two categories</li>
+                            <li>2% unlimited cash back on choice of one everyday category</li>
+                            <li>1% unlimited cash back on all other eligible purchases.</li>
+                            <li>Redeem Cash Back for a Statement Credit, Rewards Card, or a Deposit to a Qualifying Account.</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h3>Barclaycard Platinum</h3>
+                    </div>
+                    
+                    <div class="plan-features">
+                        <ul>
+                            <li>5% cash back on first $2,000 of combined quarterly purchases in two categories</li>
+                            <li>2% unlimited cash back on choice of one everyday category</li>
+                            <li>Redeem Cash Back for a Statement Credit, Rewards Card, or a Deposit to a Qualifying Account.</li>
+                            <li>1% unlimited cash back on all other eligible purchases.</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {% include 'front/openacc-partial.html' %}
+   
+
+
+    
+
+</div>
+
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static '' %}assets2/js/demos/demo-business-consulting-4.js"></script>
+{% endblock script %}

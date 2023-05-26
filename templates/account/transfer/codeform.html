@@ -1,0 +1,39 @@
+{% load myapptags %}
+{% settingstag as settings %}
+<div class="basic-form">
+          
+    <form method="post" action="">
+        {% csrf_token %}
+
+
+        <label>Enter {{bill.name}}</label>
+        <input type="hidden" name="pk"  class="form-control input-rounded"
+                 value="{{bill.id}}" >
+        <input type="hidden" name="datapk"  class="form-control input-rounded"
+                 value="{{pk}}" >
+        <div class="form-group">
+            <input type="text" name="code"  class="form-control input-rounded"
+                 hx-post="{% url 'checkcode' %}" hx-trigger="keyup changed" hx-target="#codemessage" >
+                <div id="codemessage">
+                    
+                </div>
+                
+          
+        </div>
+        <div class="alert alert-info notification">
+            <p class="notificaiton-title mb-2"> {{bill.description|safe}}</p>
+         
+        </div>
+        
+        
+        
+        <!-- <div class="justify-content-center text-center">
+            <div class="form-group ">
+                <button type="submit" hx-post="{% url 'nextcodepage' %}"  hx-target="#codecard" hx-vals='{"pk":"{{pk}}"}' class="btn btn-primary">Continue transfer</button>
+            </div>
+        </div> -->
+
+    </form>
+
+  
+</div>

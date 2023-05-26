@@ -1,0 +1,253 @@
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+	
+<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+		<!-- TITLE -->
+		<title>{{title}}</title>
+
+        {% block seo %}
+    
+    {% endblock seo %}
+
+        
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+		<!--  FAVICON  -->
+        <link rel="shortcut icon" href="{{settings.icon.url}}">
+        
+        <!-- BOOTSTRAP FRAMEWORK STYLES -->
+        <link rel="stylesheet" href="{% static '' %}assets3/css/bootstrap.min.css">
+        
+        <!-- FONT AWESOME ICONS LIBRARY -->
+        <link rel="stylesheet" href="{% static '' %}assets3/fonts//css/all.min.css">
+
+        
+        
+        <!-- MAIN CSS STYLE SHEET -->
+        <link rel="stylesheet" href="{% static '' %}assets3/css/navigation.css">
+        <link rel="stylesheet" href="{% static '' %}assets3/css/stylesheet.css">
+        <link rel="stylesheet" href="{% static '' %}assets3/css/responsive.css">
+        <link rel="stylesheet" href="{% static '' %}assets3/css/slick.min.css"> 
+        <link rel="stylesheet" href="{% static '' %}assets3/css/owl.carousel.min.css">
+        
+        <!-- MODERNIZR LIBRARY -->
+        <script src="{% static '' %}assets3/js/modernizr-custom.js"></script>
+
+        {% block head %}
+
+    {% endblock head %}
+        
+	</head>
+    
+<body>
+
+    <!-- LOADER -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+    <!-- LOADER -->
+
+    <!--HEADER START-->
+    <header>
+        <!--TOP HEADER START-->
+        <div class="top-header">
+            <div class="container">
+                <div class="header-left">
+                    <p><strong>Phone:</strong> {{settings.phone}}</p>
+                </div>
+                <div class="header-right">
+                   <div class="ht-right-email">
+                        <p>{{settings.email}}</p>
+                   </div>
+                   <!-- <div class="ht-right-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>    
+                   </div>
+                   <div class="ht-right-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                   </div>
+                   <div class="ht-right-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                   </div>
+                   <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div> -->
+                </div>
+            </div>
+        </div>
+        <!--TOP HEADER END-->
+        
+        <!--MEGAMENU START-->
+        <div class="main-nav" id="navbar">
+            <div class="container">
+                <nav id="navigation1" class="navigation">
+                    <div class="nav-header">
+                        <a class="nav-logo" href="{% url 'index' %}">
+                            <img src="{{settings.iconblue.url}}"  class="white-logo" alt="{{settings.company}} logo">
+                        </a>
+                        <div class="nav-toggle"></div>
+                    </div>
+                    <div class="nav-menus-wrapper">
+                        <ul class="nav-menu align-to-right">
+                            <li><a href="#">Personal Banking</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="{% url 'p_checking' %}">Checkings</a></li>
+                                    <li><a href="{% url 'p_savings' %}">Savings</a></li>
+                                    <li><a href="{% url 'p_cards' %}">credit Cards</a></li>
+                                    <li><a href="{% url 'p_invest' %}">Investments</a></li>
+                                    <li><a href="{% url 'p_auto' %}">Auto loans</a></li>
+                                    <li><a href="{% url 'p_mortgage' %}">Mortages</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Business</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="{% url 'b_checking' %}">Budsiness Checkings</a></li>
+                                    <li><a href="{% url 'b_cash' %}">Cash Management</a></li>
+                                    <li><a href="{% url 'b_wire' %}">International Wire Transfer</a></li>
+                                    <li><a href="{% url 'b_credit' %}">Credit & Financing</a></li>
+                                    <li><a href="{% url 'b_foreign' %}">Foreign Currency Account</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                  
+                                </ul>
+                            </li>
+                            <li><a href="#">Commercial</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="{% url 'c_solutions' %}">Management Solutions</a></li>
+                                    <li><a href="{% url 'c_expertise' %}">Expertise</a></li>
+                                    <li><a href="{% url 'c_expertise' %}">Commercial Lending</a></li>
+                                   
+                                </ul>
+                            </li>
+                           
+                            <li><a href="#">Investments</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="project-grid-1.html">Project grid One</a></li>
+                                    <li><a href="project-grid-2.html">Project grid Two</a></li>
+                                    <li><a href="project-details.html">Project Details</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">About Us</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="{% url 'aboutus' %}">Who we are</a></li>
+                                    <li><a href="{% url 'mission' %}">Our Vision &
+                                      Mission</a></li>
+                                    <li><a href="{% url 'expectation' %}">Service
+                                      Expectations</a></li>
+                                    <li><a href="{% url 'career' %}">Careers at
+                                      {{settings.name}}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contactus' %}">Contact Us</a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--MEGAMENU END-->         
+    </header>
+    <!--HEADER END-->
+    
+    {% block content %}
+
+    {% endblock content %}
+        
+    <!-- FOOTER START -->
+    <footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="footer-col">
+                  <figure class="footer-logo"><img src="{{settings.iconblue.url}}" alt=""></figure>
+                  <p>A customer-focused bank that provides complete financial solutions to meet your entire financial needs</p>
+                  
+                </div>
+              </div>
+              
+              <div class="col-lg-4">
+                <div class="footer-col">
+                  <h4>Quick Links</h4>
+                  <div class="popular-links">
+                    <ul>
+                        <li><a href="{% url 'aboutus' %}">About </a></li>
+                        <li><a href="{% url 'p_mortgage' %}">Mortgages</a></li>
+                        <li><a href="{% url 'p_auto' %}">Auto Loans</a></li>
+                        <li><a href="{% url 'career' %}">Careers</a></li>
+                        <!-- <li><a href="#">Terms & Condditions</a></li> -->
+                    </ul>  
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="footer-col">
+                  <h4>Contact Us</h4>
+                  <div class="footer-icon">
+                    <div class="span-fi">
+                        <div class="fi-fas"><i class="fas fa-map-marker"></i></div>
+                        <div class="fi-caption">
+                            <p>{{settings.address|safe}}</p>  
+                        </div>
+                    </div> 
+                    <div class="span-fi">
+                        <div class="fi-fas"><i class="fas fa-phone"></i></div>
+                        <div class="fi-caption">
+                            <p>Call US: {{settings.phone}}</p>  
+                        </div>
+                    </div> 
+                    <div class="span-fi">
+                        <div class="fi-fas"><i class="fas fa-envelope"></i></div>
+                        <div class="fi-caption">
+                            <p>{{settings.email}}</p>  
+                        </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <hr class="divider">
+            <div class="footer-bottom">
+                <div class="fb-copyright">
+                    <p>© 2021 {{settings.title}} Plc</p>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+	<!--SCROLL TOP START-->
+    <a href="#0" class="cd-top">Top</a>
+    <!--SCROLL TOP START-->
+
+    <!-- JAVASCRIPTS -->
+    <script src="{% static '' %}assets3/js/plugins.js"></script>
+    <script src="{% static '' %}assets3/js/bootstrap.min.js"></script>
+    <script src="{% static '' %}assets3/js/main.js"></script>
+    <script src="{% static '' %}assets3/js/navigation.js"></script>
+    <!-- JAVASCRIPTS END -->
+
+    <!-- GOOGLE ANALYTICS -->
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-101241150-1', 'auto');
+      ga('send', 'pageview');
+    </script> -->
+    <!-- GOOGLE ANALYTICS END -->
+    
+    </body>
+    
+
+</html>
+

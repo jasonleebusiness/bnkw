@@ -1,0 +1,127 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>Business Credit & Financing - {{settings.name}} </title>
+<meta name="description" content="We provide credit and finance solutions to assist you get your small business up and running. Find out more about business credit cards, equipment loans, small company funding, and other financing options.">
+
+<meta name="keywords" content="{{settings.title}}, {{settings.name}}, Online banking, Credit cards, loans, mortgages, business banking, debit cards, international banking">
+{% endblock seo %}
+
+
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-md bg-transparent m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 p-static order-2 ">
+                    <h1 class="text-dark text-10"><strong>Financial resources to assist in the growth of your company</strong></h1> <span
+                        class="sub-title text-dark">Get the resources you need to help your company grow. Credit cards, loans, lines of credit, and letters of credit are just some of the credit and financing choices available.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr class="m-0">
+
+    <div class="container py-5 mt-3">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                    <img class="card-img-top" src="{% static '' %}assets2/images/cc.jpg" alt="Card Image">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1 text-4 font-weight-bold">Business Financing</h4>
+                        <p class="card-text">Get the cash infusion your business needs to expand and grow or just to free up your cash flow.</p>
+                    </div>
+                </div>
+                <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                    <img class="card-img-top" src="{% static '' %}assets2/images/investment.jpg" alt="Card Image">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1 text-4 font-weight-bold">Equipment Finance & Leasing</h4>
+                        <p class="card-text">Financing for your business's necessary equipment and cars, as well as financing for your customers.</p>
+                    </div>
+                </div>
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                    <div class="overflow-hidden mb-2">
+                        <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp"
+                            data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Business Loans</strong>
+                           </h2>
+
+                    </div>
+
+                    <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Buy, refinance, build or expand a facility
+
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Finance equipment
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Restructure debt
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Make leaseholder improvements
+                        </li>
+                    </ul>
+                </div>
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                    <div class="overflow-hidden mb-2">
+                        <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp"
+                            data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Business Lines of Credit</strong>
+                        </h2>
+                    </div>
+                    <p class="text-color-light-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="600">Get quick access to funds to help you handle cash flow volatility. </p>
+
+                    <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Handle periodic borrowing needs so that you can get business done promptly
+
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Borrow, repay, and then borrow again
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Solve financing needs quickly by simply writing a check
+                        </li>
+                    </ul>
+                </div>
+               
+
+
+
+
+
+            </div>
+
+            <div class="col-md-4 col-lg-4 mt-4 mt-md-0">
+                <h4 class="text-primary">Quick links</h4>
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item"><a class="nav-link " href="{% url 'b_checking' %}">Checking Account
+                            Vision</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'b_wire' %}">International Wire Transfer</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'b_foreign' %}">Foreign Currency Account</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    {% include 'front/openacc-partial.html' %}
+
+
+</div>
+
+{% endblock content %}

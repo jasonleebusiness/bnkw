@@ -1,0 +1,11 @@
+
+  
+  {% load static %}
+  <div class="text-center">
+      <img src="{% static '' %}assets/images/completed.png" alt="" style="width: 200px;">
+
+  </div>
+
+    <div class="mt-5">
+        <a class="btn btn-primary" href="{% url 'generatepdf' pk %}">Print Receipt</a>
+    </div>

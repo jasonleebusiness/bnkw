@@ -1,0 +1,125 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-dark"><strong>Foreign Currency Exchange</strong></h1> <span class="sub-title text-dark">FDIC-insured deposit accounts are available in more than 20 foreign currencies, including euro, British pounds, Japanese yen, Australian and Canadian dollars, and Chinese renminbi.</span>
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                        <span>Foreign Currencies, U.S. Accounts
+                        <!-- <span> Solutions</span> -->
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="250"
+                        style="animation-delay: 250ms;">
+                        {{settings.name}}'s Foreign Currency Deposit Accounts allow you to make and receive payments in foreign currencies so you can take advantage of favorable exchange rates. And our accounts are domiciled in the U.S, providing FDIC insurance and simplified account management.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pt-4 mt-5">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 appear-animation animated fadeInLeftShorter appear-animation-visible"
+                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000"
+                style="animation-delay: 1000ms;">
+                <div class="owl-carousel owl-theme nav-inside mb-0 owl-loaded owl-drag owl-carousel-init"
+                    data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}"
+                    style="height: auto;">
+
+
+                    <img src="{% static '' %}assets2/images/currency.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="overflow-hidden mb-2">
+                    <h1 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-5 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="1200"
+                        style="animation-delay: 1200ms;"><strong class="font-weight-extra-bold">The support you need in today’s global economy</strong>
+                    </h1>
+                </div>
+                <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                data-appear-animation="maskUp" data-appear-animation-delay="250"
+                style="animation-delay: 250ms;">We can assist you in avoiding the problems that many businesses confront when dealing with the complexities of international trading. Our services, assistance, and guidance can help you improve your business ability, manage your cash flow, and preserve your bottom line.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row mt-5">
+        <div class="featured-boxes featured-boxes-style-2">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-comments-dollar fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">Same-Day Conversions</h4>
+                            <p class="px-3">When you deposit money into your account, you'll get same-day currency changes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-shield-alt fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">FDIC Insurance</h4>
+                            <p class="px-3">Funds in your Foreign Currency Deposit Account are insured up to the maximum amount allowable by the FDIC.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-level-down-alt fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">Reduced Fees</h4>
+                            <p class="px-3">Fees linked with foreign exchange transactions should be reduced or eliminated.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {% include 'front/openacc-partial.html' %}
+
+</div>
+
+{% endblock content %}

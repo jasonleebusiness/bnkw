@@ -1,0 +1,149 @@
+{% load humanize %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Transfer Receipt</title>
+  <style type="text/css">
+    body {
+      font-weight: 200;
+      font-size: 14px;
+    }
+
+    .header {
+      font-size: 20px;
+      font-weight: 100;
+      text-align: center;
+      color: #007cae;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 100;
+      /* text-align: right;*/
+      padding: 10px 20px 0px 20px;
+    }
+
+    .title span {
+      color: #007cae;
+    }
+
+    .details1 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+      /*margin-left: 40%;*/
+    }
+
+    .details2 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+     
+      /*margin-left: 40%;*/
+    }
+    .details3 {
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+      font-weight: 100;
+      font-size: 10px;
+      /*margin-left: 40%;*/
+    }
+
+    .hrItem {
+      border: none;
+      height: 1px;
+      /* Set the hr color */
+      color: #333;
+      /* old IE */
+      background-color: #fff;
+      /* Modern Browsers */
+    }
+  </style>
+</head>
+
+<body>
+  <div class='wrapper'>
+    <div class='header'>
+      <!-- <p class='title'>Invoice # </p> -->
+      <img src="https://{{domain}}/media/images/logo/Barclays-Logo-full_LNeG7JY.png" alt="" style="width: 300px;">
+    </div>
+  </div>
+  <div>
+    <div class='details1'>
+      <p>This Email is to inform you that a transaction has occurred on your account with {{setting.name}}, the details of which are shown below.:</p>
+      <hr class='hrItem' />
+    </div>
+
+  </div>
+  <div>
+    <!-- <div class='details1'>
+      <strong>Batch No.:</strong> {{receipt.code}}<br />
+      <strong>Account:</strong> {{receipt.account.get_account_type_display}} ({{receipt.account.acc_no}}) <br />
+      <strong>Sender:</strong> {{receipt.user.first_name}} {{receipt.user.last_name}} <br>
+      <strong>Ammount:</strong> <strong>{{receipt.account.currency}} {{receipt.amount|intcomma}}</strong>
+      <hr class='hrItem' />
+    </div> -->
+
+  </div>
+  <table id="customers" style="font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%;"
+    width="100%">
+    <tr>
+      <th
+        style="border: 1px solid #ddd; padding: 8px; padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #00aeef; color: white;"
+        align="left" bgcolor="#00aeef"><strong>Depositor</strong></th>
+      <th
+        style="border: 1px solid #ddd; padding: 8px; padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #00aeef; color: white;"
+        align="left" bgcolor="#00aeef">{{user.get_full_name}}</th>
+    </tr>
+
+    <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+      <td style="border: 1px solid #ddd; padding: 8px;"><strong>Transaction Type</strong></td>
+
+      <td style="border: 1px solid #ddd; padding: 8px;">DEBIT</td>
+            </tr>
+            
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"><strong>Transaction Amount</strong></td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.amount|intcomma}} </td>
+            </tr>
+            
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"><strong>Receiver</strong></td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.beneficiary}}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"><strong>Receiver Account Number</strong></td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.bank_acc|truncatechars:7}}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"><strong>Txr Number</strong> </td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{receipt.code}}</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;" bgcolor="#f2f2f2">
+              <td style="border: 1px solid #ddd; padding: 8px;"><strong>Date and Time</strong> </td>
+           
+              <td style="border: 1px solid #ddd; padding: 8px;">{{ receipt.created|date:"SHORT_DATETIME_FORMAT" }}</td>
+            </tr>
+            
+           
+            
+          </table>
+         <div class='details1'>
+      <p>To view your full account statement, sign up for or log in to {{setting.title}} at https://{{domain}}</p>
+      <hr class='hrItem' />
+      <p>For additional information about this transaction or any of our services, please contact our Customer Fulfilment Centre (CFC): customerservice@baclayonline.com</p>
+    </div>
+
+          <div class="details3">
+            <p><strong>Legal:</strong> <br>
+              This is an electronic receipt of a transaction and does not require any signature. The authenticity of transaction can be confirmed with the Ban. <br>
+              
+              For any other assistance, kindly contact us at {{setting.email}}
+            </p>
+          </div>
+</body>
+
+</html>

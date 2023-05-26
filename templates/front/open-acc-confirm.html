@@ -1,0 +1,82 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div role="main" class="main">
+    <div class="container">
+        {% include 'front/alert.html' %}
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h2 class="font-weight-bold text-8 line-height-2 appear-animation"
+                    data-appear-animation="fadeInRightShorter" data-appear-animation-delay="500"><span
+                        class="text-5">Dear <span class="text-color-primary">{{data.first_name}}
+                            {{data.last_name}}</span></span></h2>
+                <h4 class="text-4 line-height-6 font-weight-normal appear-animation"
+                    data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800"><span
+                        class="opacity-6">Your Account Registration has been succesfully completed. Your account
+                        information and online access information will be sent to your email address
+                        <strong>({{data.email}})</strong> once setup has been completed. Check your Junk/spam folder if
+                        you can't find the mail in your inbox.</span></h4>
+
+
+
+                <div class="text-center text-lg-end mt-5 ">
+                    <a class="btn btn-primary btn-rounded btn-primary btn-with-arrow-solid mb-5 mb-lg-2 appear-animation"
+                        data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100"
+                        href="{% url 'index' %}">Go to Homepage
+                        <span><i class="fas fa-home"></i></span></a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                    <div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual nav-inside nav-style-1 nav-light mt-2"
+                        data-plugin-options="{'autoplayTimeout': 6000}"
+                        data-dynamic-height="['460px','460px','460px','210px','180px']" style="height: 460px;">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+
+                                <!-- Carousel Slide 1 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/customer.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                                <!-- Carousel Slide 2 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/bizowner.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                                <!-- Carousel Slide 3 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/card1.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev"></button>
+                            <button type="button" role="presentation" class="owl-next"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+        <hr class="my-5">
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock content %}

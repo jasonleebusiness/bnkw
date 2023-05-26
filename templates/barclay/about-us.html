@@ -1,0 +1,131 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>About {{settings.title}}</title>
+<meta name="description" content="{{settings.title}} has worked hard to provide our customers with the greatest banking experience possible since its inception. {{settings.title}} and its affiliates provide a wide range of financial services and products.">
+<!-- <meta name="author" content="{{settings.company}}"> -->
+<meta name="keywords" content="{{settings.title}}, {{settings.name}}, Online banking, Credit cards, loans, mortgages, business banking, debit cards, international banking">
+
+{% endblock seo %}
+
+
+
+
+
+
+{% block content %}
+
+<div class="sections about-bg">
+    <div class="container">
+        <div class="pages-title panel-title">
+            <h1 class="ml-2"> <span>Who We Are</span></h1>
+            <!-- <p><a href="#">We're 100% committed to your success.</a></p> -->
+            <p class="ml-2">We're 100% committed to your success.</p>
+          </div>
+        <!-- <div class="pages-title">
+            <h1> <span>Who We Are</span></h1>
+            <p><a href="#">We're 100% committed to your success.</a></p>
+        </div> -->
+    </div>  
+</div>
+
+<!-- CONTENT START -->
+<section>
+    <!-- COMPANY ABOUT START -->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-info">
+              <!-- <h5>LEARN MORE</h5> -->
+              <h2>{{settings.name}} is a company that develops and builds solutions.</h2>
+              
+              <p>We provide first-class and world-class services to our clients, and our basic values are Excellence, Ethics, Trust, Teamwork, Customer Passion, and Continuous Learning in order to better serve you. We are completely customer-oriented, and our goal is to assure people's growth and development by providing exceptional banking services and a competitive advantage in terms of loans and grants.</p>
+              <!-- <div class="btn-more"><a class="btn btn-hover-corner" href="#" role="button">Our History</a></div> -->
+            </div>
+          </div>
+          <div class="col-lg-6 space-break">
+            <figure class="about-img"><img src="{% static '' %}assets3/img/Barclays-mediacity.jpeg" alt=""></figure>
+          </div>
+        </div>
+        <hr class="section-divider">
+        <div class="about-bar">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="ab-box">
+                    <figure class="ab-icon"><i class="fas fa-university fa-2x text-primary"></i></figure>  
+                    <div class="ab-caption">
+                        <h4>Corporate Responsibility</h4>
+                        <p>Our company concept is based on community participation. Learn how we enhance people's well-being in the places where they live, work, and play.</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 center-box">
+                <div class="ab-box">
+                    <figure class="ab-icon"><i class="fas fa-file-invoice-dollar fa-2x text-primary"></i></figure>  
+                    <div class="ab-caption">
+                        <h4>Economic Research</h4>
+                        <p>Learn how to overcome today's obstacles and seize tomorrow's chances in the global marketplace.</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="ab-box">
+                    <figure class="ab-icon"><i class="fas fa-hand-holding-usd fa-2x text-primary"></i></figure>  
+                    <div class="ab-caption">
+                        <h4>Investor Relations</h4>
+                        <p>As part of federal banking regulations, {{settings.name}} is dedicated to sharing reports and regulatory filings with you.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- COMPANY ABOUT END -->
+
+    <!-- WHY US START -->
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-5 parallax-side"></div>
+          <div class="col-lg-7 content-side">
+            <div class="inner-content">
+              <div class="panel-title">
+                <!-- <h5>WHY US</h5> -->
+                <h2>Relationship-based banking.</h2>
+              </div>
+              <p>{{settings.name}} is one of the world's largest financial organizations, offering a comprehensive range of banking, investing, asset management, and other financial and risk management products and services to individuals, small and middle-market enterprises, and big corporations. In the United States, {{settings.name}} serves approximately 47 million consumer and small business relationships with approximately 4,500 retail financial centers, 16,000 ATMs, and award-winning digital banking with approximately 35 million active users, including approximately 24 million mobile users, through approximately 4,500 retail financial centers, 16,000 ATMs, and award-winning digital banking with approximately 35 million active users, including approximately 24 million mobile users.</p>
+              <hr class="divider">
+
+              
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- WHY US END -->
+
+   
+
+    <div class="container mt-15">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-info agriculture-alt">
+              <!-- <h5>LEARN MORE</h5> -->
+              <h2>Experience our values in action</h2>
+              <p><strong>Innovation, research, and community involvement all have a place in the fabric of who we are as a company.</strong></p>
+              <h5>Fostering bright ideas through diversity and inclusion</h5>
+              <p>As a global company, we embrace diversity and inclusion. We value the diversity of our employees, customers, vendors and communities.</p>
+              <!-- <div class="btn-more"><a class="btn btn-hover-corner" href="#" role="button">Our History</a></div> -->
+            </div>
+          </div>
+          <div class="col-lg-6 space-break agriculture-alt-2">
+            <figure class="about-img"><img src="{% static '' %}assets3/img/images/ag-img-9.jpg" alt=""></figure>
+          </div>
+        </div>
+    </div>
+  
+</section> 
+<!-- CONTENT END -->
+{% endblock content %}

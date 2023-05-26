@@ -1,0 +1,132 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Open An Account | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+
+
+
+{% block content%}
+
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+      
+        <div class="row">
+           
+
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Register an Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Nav tabs -->
+                        <div class="default-tab">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#addaccount"><span class="mr-3"><i class="far fa-plus-square"></i></span>  Add New Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#pending"><span class="mr-3"><i class="fas fa-hourglass-half"></i></span> Pending Account(s)</a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="addaccount" role="tabpanel">
+                                    <div class="pt-4">
+                                        <div class="basic-form">
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                {{form|crispy}}
+                                                <div class="justify-content-center">
+                                                    <div class="form-group ">
+                                                        <button type="submit" class="btn btn-primary">Submit New Account Registration</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pending">
+                                    <div class="pt-4">
+                                        <div class="table-responsive recentOrderTable">
+                                            <table class="table primary-table-bordered  verticle-middle table-responsive-lg">
+                                                <thead class="thead-primary">
+                                                    <tr>
+                                                        <th scope="col">Account</th>
+                                                        <th scope="col">Type</th>
+                                                        <th scope="col">Currency</th>
+                                                        <th scope="col">Reg. Date</th>
+                                                        <th scope="col">Status</th>
+                                                        
+                                                       
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                
+                
+                
+                                                    {% for rs in accounts %}
+                                                    <tr>
+                
+                                                        <td><a href="{{rs.get_absolute_url}}">{% if rs.acc_no %} {{rs.acc_no}} {% else %} Unavailable {% endif %}</a></td>
+                                                        <td><a href="{{rs.get_absolute_url}}">{{rs.get_account_type_display}}</a></td>
+                                                        <td>
+                                                           {{rs.currency}}
+                                                        </td>
+                                                       
+                
+                                                        <td>
+                                                            {% if rs.reg_date %}
+                                                            {{rs.reg_date|date:"M j, Y"}}
+                                                            {% else %}
+                                                            {{rs.created|date:"M j, Y"}}
+                                                            <!-- {{rs.created|date:"SHORT_DATETIME_FORMAT"}} -->
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                           
+                                                            <span class="badge badge-rounded badge-warning">Pending</span>
+                                                          
+                                                        </td>
+                
+                                                       
+                                                      
+                
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock content%}

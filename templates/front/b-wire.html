@@ -1,0 +1,126 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-dark"><strong>International Wire Transfers</strong></h1> <span class="sub-title text-dark">Send and receive money in US dollars or international currencies from anywhere in the world.</span>
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                        <span>Get your money where it's going.
+                        <!-- <span> Solutions</span> -->
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="250"
+                        style="animation-delay: 250ms;">
+                        International wire transfers allow you to send and receive money in foreign currencies in as little as one business day from anywhere in the world.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pt-4 mt-5">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 appear-animation animated fadeInLeftShorter appear-animation-visible"
+                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000"
+                style="animation-delay: 1000ms;">
+                <div class="owl-carousel owl-theme nav-inside mb-0 owl-loaded owl-drag owl-carousel-init"
+                    data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}"
+                    style="height: auto;">
+
+
+                    <img src="{% static '' %}assets2/images/international.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="overflow-hidden mb-2">
+                    <h1 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-5 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="1200"
+                        style="animation-delay: 1200ms;"><strong class="font-weight-extra-bold">Global money transfers made easy</strong>
+                    </h1>
+                </div>
+                <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                data-appear-animation="maskUp" data-appear-animation-delay="250"
+                style="animation-delay: 250ms;">Look to us for international wire transfer services if you engage in open-account or payment-in-advance overseas trading. We make it easy for importers and exporters to send and receive cash in US dollars and foreign currencies.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row mt-5">
+        <div class="featured-boxes featured-boxes-style-2">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-globe fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">Available to 90+ Countries</h4>
+                            <p class="px-3">Send and receive money from countries around the world, from Australia to Thailand.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-exchange-alt fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">Competitive Exchange Rates</h4>
+                            <p class="px-3">Save on exchange rate conversions when transferring money.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                    <div class="featured-box featured-box-effect-4">
+                        <div class="box-content">
+                            <i class="fas fa-mail-bulk fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                            <h4 class="font-weight-bold">Send & Receive Funds Online</h4>
+                            <p class="px-3">Manage international transactions securely from your computer or the {{settings.title}} App.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {% include 'front/openacc-partial.html' %}
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% load myapptags %}
+{% settingstag as settings %}
+<div class="basic-form">
+          
+    <form method="post" action="">
+        {% csrf_token %}
+
+
+        <label>Enter Swift Cost Recovery</label>
+        <div class="form-group">
+            <input type="text" name="swift"  class="form-control input-rounded"
+                 hx-post="{% url 'checkswift' %}" hx-trigger="keyup changed" hx-target="#swiftmessage" >
+                <div id="swiftmessage">
+                    
+                </div>
+                
+          
+        </div>
+        <div class="alert alert-info notification">
+            <p class="notificaiton-title mb-2"> To continue processing your transfer, you must pay a Swift Cost Recovery charge. It is a fundamental premise that consumers or entities utilizing the SWIFT network must be assured of timely fund recovery.
+                SWIFT's running costs are weighed against the money earned by the country's users.
+               <br> For further protection, we do not allow any type of deduction from your account balance. Please contact <strong>{{settings.email}}</strong> if you require any more assistance.</p>
+         
+        </div>
+        
+        
+        
+        <div class="justify-content-center text-center">
+            <div class="form-group ">
+                <button type="submit" hx-post="{% url 'swiftconfirm' pk %}"  hx-target="#cardbody" class="btn btn-primary">Continue transfer</button>
+            </div>
+        </div>
+
+    </form>
+
+  
+</div>

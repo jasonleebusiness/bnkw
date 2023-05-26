@@ -1,0 +1,193 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                    <h1 class="text-dark"><strong>{{settings.name}} Financial Advisors</strong></h1> <span class="sub-title text-dark">Success starts with a trusted relationship</span>
+                </div>
+                <div class="col-md-4 order-1 order-md-2 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                        <span>{{settings.title}} Financial Advisors - </span>
+                        <span class="word-rotator-words bg-primary" style="width: 90.6511px; overflow: hidden;">
+                            <!-- <b class="is-hidden">Unbiased advice</b> -->
+                            <b class="is-visible">Unbiased advice</b>
+                            <b class="is-hidden">Personal attention.</b>
+                        </span>
+                        <!-- <span> Solutions</span> -->
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="250"
+                        style="animation-delay: 250ms;">
+                        All aspects of your financial life are connected. Cover every angle with an integrated strategy designed by a dedicated team of wealth planning experts.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pt-4 mt-5">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 appear-animation animated fadeInLeftShorter appear-animation-visible"
+                data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000"
+                style="animation-delay: 1000ms;">
+                <div class="owl-carousel owl-theme nav-inside mb-0 owl-loaded owl-drag owl-carousel-init"
+                    data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}"
+                    style="height: auto;">
+
+
+                    <img src="{% static '' %}assets2/images/aboutus.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="overflow-hidden mb-2">
+                    <h1 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-5 appear-animation animated maskUp appear-animation-visible"
+                        data-appear-animation="maskUp" data-appear-animation-delay="1200"
+                        style="animation-delay: 1200ms;"><strong class="font-weight-extra-bold">Say goodbye to fragmented advice.</strong>
+                    </h1>
+                </div>
+                <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                data-appear-animation="maskUp" data-appear-animation-delay="250"
+                style="animation-delay: 250ms;">Building on your wealth and securing it for the future requires an integrated plan, with all parts working in tandem. Tell us how you want to retire, how you want your business to continue and what kind of impact you want to make — we'll help tie it all together.
+
+                Surround yourself with expertise.
+                More than financial advisors, our Wealth Planners are former estate planning attorneys who understand the implications of financial decisions, big and small. As a client, your wealth plan is backed by decades of financial, legal and tax expertise.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section
+                    class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-1-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Personal Investment Services</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">You have dreams and goals for your future. Our experienced, Varex financial advisors can help you build an investment strategy to achieve them. Wherever you are in your life, we can help you.</p>
+                                    
+                            </div>
+                            <!-- <a  class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                           
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 order-2 order-lg-1 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row justify-content-end m-0">
+                        <div class="col-half-section col-half-section-right custom-text-align-right">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Commercial Investment Services</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">We'll help you simplify your institution's investments, provide for your staff, and secure your assets, whether you're a company, a non-profit, or a municipality. Our staff creates solutions that are tailored to your company's specific requirements.</p>
+                            </div>
+                            <!-- <a href="{% url 'expectation' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 p-0">
+                <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax
+                    data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-2-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center bg-color-grey">
+            <div class="col-lg-6 p-0">
+                <section
+                    class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0"
+                    data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}"
+                    data-image-src="{% static '' %}assets2/img//generic/generic-corporate-3-3-full.jpg" style="min-height: 315px;">
+                </section>
+            </div>
+            <div class="col-lg-6 p-0">
+                <section class="section section-no-border h-100 m-0">
+                    <div class="row m-0">
+                        <div class="col-half-section col-half-section-left">
+                            <div class="overflow-hidden">
+                                <h4 class="mb-0 appear-animation" data-appear-animation="maskUp"><a href="#"
+                                        class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">Varex Financial Advisors Leadership</a></h4>
+                            </div>
+                            <div class="overflow-hidden mb-2">
+                                <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="200">Dedicated specialists, deep expertise, and commitment to our clients is what defines Varex Financial Advisors. We're a team focused on your success.</p>
+                            </div>
+                            <!-- <a href="{% url 'career' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2" data-appear-animation="maskUp">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a> -->
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+       
+
+        
+    </div>
+
+    {% include 'front/openacc-partial.html' %}
+
+
+
+</div>
+
+{% endblock content %}

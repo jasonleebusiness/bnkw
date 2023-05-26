@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Transfer in progress</h4>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+
+            <form method="post" action="{% url 'confirmotp' %}">
+                {% csrf_token %}
+
+
+                <label>OTP (Token)</label>
+                <div class="form-group">
+                    <input type="text" name="code" class="form-control input-rounded" placeholder="******"
+                        hx-post="{% url 'checkotp' pk %}" hx-trigger="keyup changed" hx-target="#otpmessage">
+                    <div id="otpmessage">
+
+                    </div>
+
+
+                </div>
+          
+                    <div class="alert alert-info notification">
+                        <p class="notificaiton-title mb-2"> One-Time Security Pin has been sent to your account email address and phone number, Please kindly
+                            enter the pin into the above box and click on Confirm</p> <br>
+
+                     
+                    </div>
+                    <p id="resend-email">Didn't receive an email? <a hx-get="{% url 'resend-email' %}" hx-vals='{"pk": "{{pk}}"}' hx-target="#resend-email" class=" text-primary">resend here</a></p>
+
+
+
+               
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

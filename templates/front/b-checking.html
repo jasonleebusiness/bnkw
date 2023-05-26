@@ -1,0 +1,192 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+{% load crispy_forms_tags %}
+
+<div role="main" class="main">
+    <div class="container">
+        {% include 'front/alert.html' %}
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h2 class="font-weight-bold text-8 line-height-2 appear-animation"
+                    data-appear-animation="fadeInRightShorter" data-appear-animation-delay="500"><span
+                        class="text-5">{{settings.name}} <span class="text-color-primary">Payment Solutions
+                        </span></span></h2>
+                <h4 class="text-4 line-height-6 font-weight-normal appear-animation"
+                    data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800"><span
+                        class="opacity-6">One trusted partner. A complete suite of payment solutions to accept credit cards, made simple and secure.</h4>
+
+
+
+                <div class="text-center text-lg-end mt-5 ">
+                    <a class="btn btn-primary btn-rounded btn-primary btn-with-arrow-solid mb-5 mb-lg-2 appear-animation"
+                        data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100"
+                        href="{% url 'contactus' %}">Contact Us
+                        <span><i class="fas fa-envelope"></i></span></a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                    <div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual nav-inside nav-style-1 nav-light mt-2"
+                        data-plugin-options="{'autoplayTimeout': 6000}"
+                        data-dynamic-height="['460px','460px','460px','210px','180px']" style="height: 460px;">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+
+                                <!-- Carousel Slide 1 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/customer.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                                <!-- Carousel Slide 2 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/bizowner.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                                <!-- Carousel Slide 3 -->
+                                <div class="owl-item position-relative"
+                                    style="background-image: url({% static '' %}assets2/images/card1.jpg); background-size: cover; background-position: center;">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev"></button>
+                            <button type="button" role="presentation" class="owl-next"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+        <hr class="my-5">
+    </div>
+
+
+
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h2 class="font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                        A payments leader on your side
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                        We focus on payments so you can focus on running your business. With <span class="alternative-font">{{settings.name}}</span> as your trusted partner, you can be ready for what comes next.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <a class="btn btn-modern btn-dark mt-1">Get Started</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col py-3">
+                <hr class="solid mt-5 mb-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="featured-boxes featured-boxes-style-2">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="fab fa-cc-visa fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Flexible payment acceptance</h4>
+                                <p class="px-3">Make sure you're ready for any sale, regardless of how or when your consumers want to pay. Accept credit cards from customers all throughout the United States.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="fas fa-piggy-bank fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">No hidden fees, quick funding</h4>
+                                <p class="px-3">Why put off being paid? Deposits can be made the same day. Plus, there are no hidden or monthly fees, so pricing is fair and open.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="fas fa-user-lock fa-4x icon-featured icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Trusted Security</h4>
+                                <p class="px-3">Our secure payment services provide fortress-level security. Our industry-leading systems also help keep your payments and reputation safe as technology improves.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container py-5 mt-3">
+        <div>
+            <h2 class="font-weight-bold">Accept and handle payments in a variety of ways, including in-store, online, and through your mobile app.</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-6 mb-5 appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                        <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                            <img class="card-img-top" src="{% static '' %}assets2/images/personal.jpg" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="card-title mb-1 text-4 font-weight-bold">In person, accept credit cards</h4>
+                                <p class="card-text">Find development programs, internships, and career opportunities that will develop your personal strengths and provide rewarding experiences to grow your career.With our payment terminals, contactless mobile reader, and other products, you may accept credit cards in your store, curbside, or on the go.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-5  appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                        <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                            <img class="card-img-top" src="{% static '' %}assets2/images/cc.jpg" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="card-title mb-1 text-4 font-weight-bold">Accept credit cards online</h4>
+                                <p class="card-text">With pre-built payment connections with top e-commerce platforms, a virtual terminal, and a payment gateway, you may accept credit cards online or over the phone.</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<div role="main" class="main">
+
+
+
+    <div id="examples" class="container py-2">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-9">
+                        <div class="featured-box featured-box-primary text-start mt-0">
+                            <div class="box-content">
+                                <h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">Credit an account
+                                </h4>
+                                <form action="" id="" method="post" class="form-fields-rounded">
+
+                                    {% include 'front/alert.html' %}
+
+                                    {% csrf_token %}
+
+
+                                    <div class="row">
+                                        
+                                                                                
+                                        <div class="form-group col-lg-6">
+                                            <label class="form-label">Select an Account</label>
+                                            <select class="form-control " name="account" >
+                                                {% for rs in accounts %}
+                                             <option value="{{rs.id}}">{{rs.acc_no}} - {{rs.user.get_full_name }} - {{rs.currency }} {{rs.balance|intcomma}}</option>
+                                             {% endfor %}
+                                             <!-- <option>2</option>
+                                             <option>3</option>
+                                             <option>4</option> -->
+                                         </select>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label class="form-label">Amount</label>
+                                            <input type="number" name="amount" value=""
+                                                class="form-control text-3 h-auto py-2" required>
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label class="form-label">Depositor Full Name (Dont Make mistake with the name.....)</label>
+                                            <input type="text" name="name" value=""
+                                                class="form-control text-3 h-auto py-2" required>
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label class="form-label">Description</label>
+                                            <textarea   rows="8" class="form-control text-3 h-auto py-2" name="description" ></textarea>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="form-group col">
+
+                                            <button type="sumbit"
+                                                class="btn btn-outline btn-rounded btn-primary  btn-with-arrow mb-2">
+                                                Send Funds<span><i class="fas fa-file-import"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-md bg-transparent m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 p-static order-2 ">
+                    <h1 class="text-dark text-10"><strong>Allow your financial strategy to develop with you from year to year.</strong></h1> <span
+                        class="sub-title text-dark">Your financial life is intertwined in every way. An integrated approach created by a professional team of wealth planning experts will cover all bases.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr class="m-0">
+
+    <div class="container py-5 mt-3">
+
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                    <div class="overflow-hidden mb-2">
+                        <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp"
+                            data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Cryptocurrency 101</strong>
+                        </h2>
+                    </div>
+                    <p class="text-color-light-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="600">Have you heard about cryptocurrency (crypto) and are unsure what it means? T. Penn Nugent, {{settings.name}} Manager of Personal Portfolio Strategy, explains cryptocurrency's history, NFTs, the blockchain, and current events in the digital currency industry in this instructive webinar recording. </p>
+
+                   
+                </div>
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                    <div class="overflow-hidden mb-2">
+                        <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp"
+                            data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Kickstart Your Financial Plan</strong>
+                        </h2>
+                    </div>
+                    <p class="text-color-light-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="600">Are you on pace to achieving your financial objectives? Brandie Fintchre, {{settings.title}} Manager of Premier Bankers, and Dan Thomason, {{settings.name}} Financial Consultant, explain the five steps you can take right now to begin your financial wellness journey. </p>
+
+                   
+                </div>
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                    <div class="overflow-hidden mb-2">
+                        <h2 class="font-weight-normal text-7 mb-2 appear-animation" data-appear-animation="maskUp"
+                            data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Online
+                                Services</strong>
+                        </h2>
+                    </div>
+
+                    <ul class="list list-icons list-icons-style-2 list-icons-lg">
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Money Manager is a Windows-based online
+                            system that allows you to view detailed account information, initiate transactions, and
+                            reconcile your accounts.
+
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Internet Balance & Detail Reporting is for
+                            commercial customers who only need to check their account balance or view account detail
+                            over the internet.
+                        </li>
+                        <li class="line-height-9 text-3-5 mb-1">
+                            <i class="fas fa-check border-width-2 text-3"></i>Money Manager ACH is a feature of the
+                            Money Manager program that allows you to create ACH debit and credit transactions.
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="col-md-4 col-lg-4 mt-4 mt-md-0">
+                <h4 class="text-primary">Quick links</h4>
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'i_phil' %}">Philosophy
+                            Vision</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'i_outlook' %}">Market Outlook</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'i_solutions' %}">Solutions</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'front/openacc-partial.html' %}
+
+
+</div>
+
+{% endblock content %}

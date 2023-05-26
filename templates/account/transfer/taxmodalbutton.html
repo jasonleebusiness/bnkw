@@ -1,0 +1,25 @@
+<button hx-get="/modal" hx-target="#modals-here"  hx-trigger="click"
+                                        class="btn btn-primary"
+                                        _="on htmx:afterOnLoad wait 10ms then add .show to #modal then add .show to #modal-backdrop">Submit</button>
+
+                                        <div id="modal-backdrop" class="modal-backdrop fade show" style="display:block;"></div>
+                                        <div id="modal" class="modal fade show" tabindex="-1" style="display:block;">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content">
+                                                <div class="justify-content-center">
+                                                  
+                                                  <div class="progress" hx-get="{% url 'taxform' %}"  hx-swap="outerHTML" hx-vals='{"pk":"{{pk}}"}'  hx-trigger="load delay:6s">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                                                  </div>
+                                                </div>
+                                               
+                                                  <!-- <div class="modal-footer" id="nextbtn">
+                                                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+                                                  </div> -->
+                                              </div>
+
+                                              <!-- <div id="nextbtn"></div> -->
+
+                                              </div>
+                                            </div>
+                                        

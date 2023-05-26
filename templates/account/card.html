@@ -1,0 +1,302 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Credit Cards & Debit Cards | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+
+
+
+
+{% block content%}
+
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+
+        <div class="row">
+
+
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">{{settings.name}} Credit Cards</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Nav tabs -->
+                        <div class="default-tab">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#addaccount"><span
+                                            class="mr-3"><i class="fas fa-credit-card"></i></span> {{settings.name}} Credit
+                                        Cards</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#mycards"><span class="mr-3"><i
+                                                class="fab fa-cc-visa"></i></span> My Cards</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#pending"><span class="mr-3"><i
+                                                class="fas fa-hourglass-half"></i></span> Pending Card Request</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="addaccount" role="tabpanel">
+
+                                    <div class="col-lg-12 col-xl-12 pt-4">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <div class="bootstrap-carousel">
+                                                    <div class="carousel slide" data-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active">
+                                                                <img class="d-block w-100"
+                                                                    src="{% static '' %}assets/images/card2.jpg"
+                                                                    alt="First slide">
+
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img class="d-block w-100"
+                                                                    src="{% static '' %}assets/images/card1.jpg"
+                                                                    alt="Second slide">
+
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img class="d-block w-100"
+                                                                    src="{% static '' %}assets/images/onlinebanking.jpg"
+                                                                    alt="Third slide">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-xl-12 pt-4 text-center">
+                                        <button class="btn btn-primary" data-toggle="modal"
+                                            data-target="#cardform">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="tab-pane fade" id="mycards">
+                                    <div class="pt-4">
+                                        {% if cards_a  %}
+                                        {% for rs in cards_a %}
+                                        <div class="col-xl-6">
+                                            <div class="card mb-3">
+                                                <img class="card-img-top img-fluid"
+                                                    src="{% static '' %}assets/images/usercard.jpg"
+                                                    alt="User Credit Card">
+                                                <div class="card-header">
+                                                    <h6 class="card-title">{{settings.name}} Freedom Unlimited</h6>
+                                                    <p>Credit Card</p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="new-arrival-content position-relative">
+                                                        <!-- <h4><a href="ecom-product-detail.html">{{rs.account.get_account_type_display}}</a></h4> -->
+                                                        <!-- <div class="comment-review star-rating">
+                                                           
+                                                          
+                                                            
+                                                            <p class="price">$200.00 <br><span class="item">bonus plus 5% cash back grocery store offer</span></p>
+                                                        </div> -->
+                                                        <div class="card-body">
+                                                            <div class="basic-list-group">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">
+                                                                        {{rs.account.get_account_type_display}}</li>
+                                                                    <li class="list-group-item">{{rs.card_network}}</li>
+                                                                    <li class="list-group-item">{{rs.card_type}}</li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+                                        {% else %}
+                                        <div class="col-xl-12">
+
+
+                                            <p class="card-text text-center">You do not have any Credit Card Request.
+                                            </p>
+
+                                            <div class="col-lg-12 col-xl-12 pt-4 text-center">
+                                                <div class="form-group ">
+                                                    <a href="{% url 'account' %}"
+                                                        class="btn btn-primary text-center">Exit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pending">
+                                    <div class="pt-4">
+                                        {% if cards_p %}
+                                        <div class="table-responsive recentOrderTable">
+                                            <table
+                                                class="table primary-table-bordered  verticle-middle table-responsive-md">
+                                                <thead class="thead-primary">
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Account</th>
+                                                        <th scope="col">Card Network</th>
+                                                        <th scope="col">Card Type</th>
+                                                        <th scope="col">Status</th>
+
+
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+
+
+                                                    {% for rs in cards_p %}
+                                                    <tr>
+
+                                                        <td>{{forloop.counter}}</td>
+                                                        <td>{{rs.account.get_account_type_display}}</td>
+                                                        <td>
+                                                            {{rs.card_network}}
+                                                        </td>
+
+
+                                                        <td>
+
+                                                            {{rs.card_type}}
+
+                                                        </td>
+                                                        <td>
+
+                                                            <span
+                                                                class="badge badge-rounded badge-warning">Pending</span>
+
+                                                        </td>
+
+
+
+
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        {% else %}
+                                        <div class="col-xl-12">
+
+
+                                            <p class="card-text text-center">You do not have any pending Card Request.
+                                            </p>
+
+                                            <div class="col-lg-12 col-xl-12 pt-4 text-center">
+                                                <a href="{% url 'account' %}"
+                                                    class="btn btn-primary text-center">Exit</a>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="cardform">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Apply for a Credit Card</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- {{form|crispy}} -->
+
+                <div class="basic-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        <label>Select an Account</label>
+                        <div class="form-group">
+
+                            <select class="form-control custom-select" name="account" id="sel1">
+                                {% for rs in accounts %}
+                                <option value="{{rs.id}}">{{rs.get_account_type_display}} - {{rs.currency }}
+                                    {{rs.balance|intcomma}}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+
+
+                        <label>Card Network</label>
+                        <div class="form-group">
+                            {{form.card_network}}
+                        </div>
+
+                        <label>Card Type</label>
+                        <div class="form-group">
+                            {{form.card_type}}
+                        </div>
+
+
+                        <label>Card Request Type</label>
+                        <div class="form-group">
+                            {{form.request_type}}
+                        </div>
+
+                        <label>Comment</label>
+                        <div class="form-group">
+                            <textarea name="description" cols="40" rows="10" maxlength="255"
+                                class="textarea form-control" id="id_description"></textarea>
+                        </div>
+
+                </div>
+
+
+                <div class="col-lg-12 col-xl-12 pt-4 text-center">
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary">Submit request</button>
+                    </div>
+                </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content%}

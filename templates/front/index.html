@@ -1,0 +1,553 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>{{settings.title}} - Homepage </title>
+<meta name="description" content="{{settings.description}}">
+<!-- <meta name="author" content="{{settings.company}}"> -->
+<meta name="keywords" content="{{settings.name}}, {{settings.title}}, Online banking, Credit cards, loans, mortgages, debit cards, international banking">
+{% endblock seo %}
+
+
+
+
+{% block content %}
+
+
+    <div role="main" class="main">
+        <div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover show-dots-xs nav-style-1 nav-inside nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover mb-0"
+            data-plugin-options="{'autoplayTimeout': 7000}"
+            data-dynamic-height="['700px','700px','700px','550px','500px']" style="height: 700px;">
+            <div class="owl-stage-outer">
+                <div class="owl-stage">
+    
+                    <!-- Carousel Slide 1 -->
+                    <div class="owl-item position-relative overflow-hidden"
+                        style="background-image: url({% static '' %}assets2/img/slides/slide-corporate-9-1.jpg); background-size: cover; background-position: center;">
+                        <div class="container position-relative z-index-3 h-100">
+                            <div class="row justify-content-center align-items-center h-100">
+                                <div class="col-lg-7">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <h2 class="position-relative text-color-dark text-5 line-height-5 font-weight-semibold ls-0 px-4 mb-2 appear-animation"
+                                            data-appear-animation="fadeInDownShorterPlus"
+                                            data-plugin-options="{'minWindowWidth': 0}">
+                                            <span class="position-absolute right-100pct top-50pct transform3dy-n50">
+                                                <img src="{% static '' %}assets2/img/slides/slide-title-border-light.png"
+                                                    class="w-auto appear-animation"
+                                                    data-appear-animation="fadeInRightShorter"
+                                                    data-appear-animation-delay="250"
+                                                    data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                            </span>
+                                            MAKE BETTER <span class="position-relative">THINGS <span
+                                                    class="position-absolute left-50pct transform3dx-n50 top-0 mt-4"><img
+                                                        src="{% static '' %}assets2/img/slides/slide-dark-line.png"
+                                                        class="w-auto ms-4 appear-animation"
+                                                        data-appear-animation="fadeInLeftShorterPlus"
+                                                        data-appear-animation-delay="1000"
+                                                        data-plugin-options="{'minWindowWidth': 0}"
+                                                        alt="" /></span></span>
+                                            <span class="position-absolute left-100pct top-50pct transform3dy-n50">
+                                                <img src="{% static '' %}assets2/img/slides/slide-title-border-light.png"
+                                                    class="w-auto appear-animation"
+                                                    data-appear-animation="fadeInLeftShorter"
+                                                    data-appear-animation-delay="250"
+                                                    data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                            </span>
+                                        </h2>
+                                        <h1 class="text-color-dark font-weight-extra-bold text-10 text-md-12-13 line-height-1 text-center mb-2 appear-animation"
+                                            data-appear-animation="blurIn" data-appear-animation-delay="500"
+                                            data-plugin-options="{'minWindowWidth': 0}">Banking tailored to your lifestyle</h1>
+                                        <!-- <p class="text-4-5 text-color-dark font-weight-light text-center mb-4"
+                                            data-plugin-animated-letters
+                                            data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0, 'animationSpeed': 30}">
+                                            Check out our options and features</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Carousel Slide 2 -->
+                    <div class="owl-item position-relative"
+                        style="background-image: url({% static '' %}assets2/img/slides/slide-corporate-9-2.jpg); background-size: cover; background-position: center;">
+                        <div class="container position-relative z-index-1 h-100">
+                            <div class="row justify-content-center align-items-center h-100">
+                                <div class="col-lg-7">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <h2 class="text-color-dark font-weight-extra-bold text-10 text-md-12-13 line-height-1 text-center mb-2 appear-animation"
+                                            data-appear-animation="blurIn" data-appear-animation-delay="500"
+                                            data-plugin-options="{'minWindowWidth': 0}">Credit cards</h2>
+                                        <p class="text-4-5 text-color-dark font-weight-light text-center mb-4"
+                                            data-plugin-animated-letters
+                                            data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
+                                            The key to obtaining the best credit card is to have options.</p>
+                                        <a href="{% url 'p_cards' %}" data-appear-animation="blurIn" data-appear-animation-delay="500"
+                                        data-plugin-options="{'minWindowWidth': 0}" class="btn btn-primary btn-rounded btn-with-arrow-solid text-center mb-2 appear-animation">Learn more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" role="presentation" class="owl-prev"></button>
+                <button type="button" role="presentation" class="owl-next"></button>
+            </div>
+            <div class="owl-dots mb-5">
+                <button role="button" class="owl-dot active"><span></span></button>
+                <button role="button" class="owl-dot"><span></span></button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <section class="call-to-action featured featured-primary mb-5">
+            <div class="col-sm-9 col-lg-9">
+                <div class="call-to-action-content">
+                    <h3>Get <strong class="font-weight-extra-bold">cash back</strong> on debit card transactions and avoid<strong class="font-weight-extra-bold"> monthly fees.</strong></h3>
+                    <p class="mb-0">Cashback Debit is an online checking account with a debit card that allows you to earn money back on your purchases.</p>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="call-to-action-btn">
+                    <a href="{% url 'register' %}" target="_blank" class="btn btn-rounded text-2 btn-primary">Open an
+                        Account.</a>
+                </div>
+            </div>
+        </section>
+    <!-- <div class="home-intro bg-primary" id="home-intro">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        Get cash back on
+                        debit card purchases
+                        and <span class="highlighted-word">No Monthly Fees</span>
+                        <span>Cashback Debit is the online checking account with a debit card that lets you earn cash
+                            back for your spending.</span>
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="get-started text-start text-lg-end">
+                        <a href="{% url 'register' %}"
+                            class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3">Open an
+                            Account.</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+
+<!-- icon carousel -->
+    <!-- <div class="container">
+
+        <div class="owl-carousel owl-theme featured-boxes featured-boxes-style-4"
+            data-plugin-options="{'items': 4, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-briefcase fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Business</h4>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fab fa-cc-visa fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Credit Cards</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-file-alt fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Checking</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-piggy-bank fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Savings</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-home fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Home Loans</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-car fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Auto Loans</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="featured-box featured-box-primary featured-box-effect-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <div class="box-content mr-4 ml-4">
+                        <i class="fas fa-chart-line fa-4x text-primary"></i>
+                        <h4 class="font-weight-bold text-color-dark pb-1 mb-2">Investments</h4>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div> -->
+
+
+    <!-- about us -->
+    <div class="container container-xl-custom mt-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 fluid-col-lg-6" style="min-height: 33vw;">
+                <div class="fluid-col fluid-col-left">
+                    <img src="{% static '' %}assets2/images/ski-team.jpg" class="img-fluid" style="width: 100%;" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pe-5">
+                    <span class="d-block font-weight-light negative-ls-1 text-5 mb-1"><em class="text-2 opacity-8">Personal Banking
+                           </em></span>
+                    <h2 class="font-weight-extra-bold text-color-dark negative-ls-3 line-height-1 text-7 mb-3">Introducing Barclaycard Avios</h2>
+                    <span class="d-block alternative-font text-color-primay text-5 mb-4 pb-2">A new way to collect Avios on your everyday spend.</span>
+                    <p class="lead mb-4 pb-2">23.9% APR Representative (variable)
+
+                        Subject to application, financial circumstances and borrowing history. Eligibility and conditions apply.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- service -->
+    <section class="section section-height-3 border-0 mt-0 mb-0">
+        <div class="container  ">
+            <div class="row pt-4">
+                <div class="col">
+                    <div class="overflow-hidden mb-3">
+                        <span class="d-block font-weight-light negative-ls-1 text-5 mb-1">We're Taking a Stand for You.</span>
+                        <h2 class="font-weight-bold text-8 mb-0 appear-animation animated maskUp appear-animation-visible"
+                            data-appear-animation="maskUp" style="animation-delay: 100ms;">
+                            We make every dream a reality.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row py-3 justify-content-center">
+                <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                    <article>
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="text-decoration-none">
+                                    <img src="{% static '' %}assets2/images/mortgage.jpg"
+                                        class="img-fluid hover-effect-2 mb-3" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="mb-0"><a href="#"
+                                        class="text-3 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">Mortgages</a>
+                                </h4>
+                                <p class="mb-2 lead text-4">A dream mortgage is required for your ideal home. {{settings.name}} Mortgage Company provides a number of mortgage alternatives to assist you in becoming a homeowner.
+                                </p>
+                                <a href="{% url 'p_mortgage' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid  mb-2">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a>
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" data-appear-animation-delay="250" style="animation-delay: 250ms;">
+                    <article>
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="text-decoration-none">
+                                    <img src="{% static '' %}assets2/images/customer-service.jpg"
+                                        class="img-fluid hover-effect-2 mb-3" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="mb-0"><a href="#"
+                                        class="text-3 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">investments</a>
+                                </h4>
+                                <p class="mb-2 lead text-4">Through {{settings.company}} Financial advisors, you'll have guidance and
+                                    access to financial solutions from stock and mutual funds to IRAs and insurance</p>
+                                    <a href="{% url 'p_invest' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a>
+                                    
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-8 col-md-4 appear-animation animated fadeIn appear-animation-visible"
+                    data-appear-animation="fadeIn" data-appear-animation-delay="500" style="animation-delay: 500ms;">
+                    <article>
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="text-decoration-none">
+                                    <img src="{% static '' %}assets2/images/auto.jpg"
+                                        class="img-fluid hover-effect-2 mb-3" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="mb-0"><a href="#"
+                                        class="text-3 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">Auto-Loans</a>
+                                </h4>
+
+                                <p class="mb-2 lead text-4">We provide lower interest rates than most other financial organizations. Get the vehicle you require without incurring excessive debt.</p>
+                                    <a href="{% url 'p_auto' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right" aria-hidden="true"></i></span></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- app section -->
+    <section class="section section-dark section-angled border-0 pb-0 m-0 lazyloaded"
+        style="background-size: 100%; background-position: center top; background-image: url(&quot;{% static '' %}assets2/images/build_bg2.jpg&quot;);"
+        data-bg-src="{% static '' %}assets2/images/build_bg2.jpg">
+        <div class="section-angled-layer-top section-angled-layer-increase-angle bg-color-light-scale-1"
+            style="padding: 4rem 0;"></div>
+
+
+
+
+        <div class="container container-xl-custom mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fluid-col-lg-6" style="min-height: 33vw;">
+                    <div class="fluid-col fluid-col-left">
+                        <img src="{% static '' %}assets2/images/online-banking.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="pe-5">
+                        <span
+                            class="d-block alternative-font text-color-white text-5 mb-4 pb-2 appear-animation animated appear-animation-visible"
+                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"
+                            data-appear-animation-duration="750">Digital Banking</span>
+
+                        <h2 class="font-weight-bold line-height-3 text-12 mt-5 mb-3 appear-animation animated appear-animation-visible"
+                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"
+                            data-appear-animation-duration="750">Get Instant Access To Your Account</h2>
+
+                        <p class="lead mb-4 pb-2 appear-animation animated appear-animation-visible"
+                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700"
+                            data-appear-animation-duration="800">You want more control of where and when you bank. Our
+                            online digital features and mobile banking make it easier than ever to bank from anywhere.
+                            You can check your balances, pay bills, transfer funds, set alerts, and more 24/7 from one
+                            place – your laptop, smartphone, or tablet.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row border border-start-0 border-bottom-0 border-end-0 border-color-light-2">
+            <div class="col-lg-6 col-md-6 col-6 text-center d-flex align-items-center justify-content-center py-4">
+                <a class="text-decoration-none" >
+                    <div class="icon-box">
+                        <i class="fas fa-credit-card text-white fa-5x"></i>
+                        <h4 class="text-4 mb-0">Pay Bills<small class="d-block p-relative bottom-4 opacity-6 ls-0">Pay
+                                and manage all your bill from one online dashboard</small></h4>
+                    </div>
+                </a>
+            </div>
+            <div
+                class="col-lg-6 col-md-6 col-6 text-center divider-left-border border-color-light-2 d-flex align-items-center justify-content-center py-4">
+                <a class="text-decoration-none" >
+                    <div class="icon-box">
+                        <i class="fas fa-piggy-bank text-white fa-5x"></i>
+                        <h4 class="text-4 mb-0">Automatic Savings <small
+                                class="d-block p-relative bottom-4 opacity-6 ls-0">Automatically contribute to your
+                                savings to help toward financial goals.</small></h4>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    
+
+
+ 
+    <div class="container  mt-5">
+        <div class="row mt-5">
+            <div class="col">
+                <div class="heading heading-border heading-bottom-border">
+                    <h1 class="font-weight-normal"><strong class="font-weight-extra-bold mb-3">Business Banking Services</strong></h1>
+                </div>
+    
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="tabs tabs-vertical tabs-right tabs-navigation tabs-navigation-simple">
+                            <ul class="nav nav-tabs col-sm-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#tabsNavigationVertSimple1" data-bs-toggle="tab">Checking Account</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="#tabsNavigationVertSimple2" data-bs-toggle="tab">Premium Savings</a>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tabsNavigationVertSimple3" data-bs-toggle="tab">Money Market</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tabsNavigationVertSimple4" data-bs-toggle="tab">Cash Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tabsNavigationVertSimple5" data-bs-toggle="tab">Interest Checking</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="tab-pane tab-pane-navigation active" id="tabsNavigationVertSimple1">
+                            <h4>Business Checking Account</h4>
+                            <p>Want to run your business without having to worry about all of its related financial needs? At {{settings.title}}, we take the hassle out of business checking by keeping the paperwork to a minimum and by giving you personalized customer service.</p>
+                            <a href="{% url 'b_checking' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                        <!-- <div class="tab-pane tab-pane-navigation" id="tabsNavigationVertSimple2">
+                            <h4>Business Premium Savings</h4>
+                            <p>A wide selection of investing strategies from seasoned portfolio managers. Investment Advice for a Rich Life is one of our priorities for all investors. We select fund managers across asset classes and continuously monitor their performance.</p>
+                            <a href="{% url 'b_checking' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right"></i></span></a>
+                        </div> -->
+                        <div class="tab-pane tab-pane-navigation" id="tabsNavigationVertSimple3">
+                            <h4>Money Market</h4>
+                            <p>Our business money market accounts are a great way to help your business save, whether you're building your balance toward a planned purchase or creating a buffer for unexpected expenses.</p>
+                            <a href="{% url 'b_credit' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                        <div class="tab-pane tab-pane-navigation" id="tabsNavigationVertSimple4">
+                            <h4>Cash Management Solutions</h4>
+                            <p>The Cash Management professionals at {{settings.title}} want to be your financial partner. We are dedicated to helping our business partners grow and we can provide you with the appropriate products and services to make that happen.</p>
+                            <a href="{% url 'b_cash' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                        <div class="tab-pane tab-pane-navigation" id="tabsNavigationVertSimple5">
+                            <h4>Business Interest Checking</h4>
+                            <p>The Business Interest Checking account from {{settings.title}} allows you to earn interest on your account balance with no monthly maintenance fee as long as you maintain an average daily balance of at least $5,000.</p>
+                            <a href="{% url 'p_invest' %}" class="btn btn-primary btn-rounded btn-primary  btn-with-arrow-solid mb-2">Learn More<span><i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="examples" class="container py-2 mt-5">
+
+       
+
+
+        <div class="row mb-5 pb-3">
+            <div class="heading heading-border heading-bottom-border">
+                <h1 class="font-weight-normal"><strong class="font-weight-extra-bold mb-3">Reliable Banking Services</strong></h1>
+            </div>
+           
+
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                    <img class="card-img-top" src="{% static '' %}assets2/images/online-banking.jpg" alt="Card Image">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1 text-4 font-weight-bold">Online Banking</h4>
+                        <p class="card-text">We deliver best-in-class online solutions for both our corporate and private clients across our services with optimized security feature through our Online Banking channels.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                    <img class="card-img-top" src="{% static '' %}assets2/images/commercial-banking.jpg" alt="Card Image">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1 text-4 font-weight-bold">Commercial Banking</h4>
+                        <p class="card-text">The Commercial banking division focuses on serving all non-institutional clients within the value chain of the Banks large, corporate customers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                    <img class="card-img-top" src="{% static '' %}assets2/images/personal-banking.jpg" alt="Card Image">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1 text-4 font-weight-bold">Personal Banking</h4>
+                        <p class="card-text">We offer a total value package, with customized services designed to suit your individual requirements; Savings Accounts, Current Accounts, Loans.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+       
+
+    </div>
+   
+</div>
+
+{% endblock content %}

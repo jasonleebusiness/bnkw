@@ -1,0 +1,135 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+{% block seo %}
+<title>Contact Us | {{settings.title}}</title>
+<meta name="description" content="Phone numbers, frequently asked questions, and contact forms are provided for contacting a member of the {{settings.company}} customer service team with your questions and inquiries.">
+<!-- <meta name="author" content="{{settings.company}}"> -->
+<meta name="keywords" content="{{settings.title}}, {{settings.name}}, Online banking, Credit cards, loans, mortgages, business banking, debit cards, international banking">
+{% endblock seo %}
+
+
+
+
+
+{% block content %}
+
+<div class="sections about-bg">
+    <div class="container">
+        <div class="pages-title panel-title">
+            <h1 class="ml-2"> <span>Contact Us</span></h1>
+            <!-- <p><a href="#">We're 100% committed to your success.</a></p> -->
+            <p class="ml-2">Feel free to inquire about specifics; don't hold back!</p>
+          </div>
+        <!-- <div class="pages-title">
+            <h1> <span>Who We Are</span></h1>
+            <p><a href="#">We're 100% committed to your success.</a></p>
+        </div> -->
+    </div>  
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+          <!-- CONTACT INFO START -->
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <h2>Get in touch with us</h2>
+              <p>Whatever questions you might have, we're here to help.</p>
+              
+              <div class="span-contact">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div> 
+                <p>&nbsp;{{settings.email}}</p>
+              </div>
+              <div class="span-contact">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div> 
+                <p>&nbsp;{{settings.phone}}</p>
+              </div>
+              <div class="span-contact">
+                <div class="contact-icon"><i class="fas fa-map"></i></div> 
+                <p>&nbsp;{{settings.address|safe}}</p>
+              </div>
+              <hr>
+             {% if settings.phone2 %}
+             <div class="span-contact">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div> 
+                <p>&nbsp;{{settings.phone2}}</p>
+              </div>
+              
+             {% endif %}
+             {% if settings.address2 %}
+             <div class="span-contact">
+                <div class="contact-icon"><i class="fas fa-map"></i></div> 
+                <p>&nbsp;{{settings.address2|safe}}</p>
+              </div>
+             {% endif %}
+            </div>
+          </div>
+          <!-- CONTACT INFO END -->
+            
+          <!-- CONTACT FORM START -->    
+          <div class="col-lg-6 space-break">
+            <div class="contact-form">
+                <form  method="post" >
+                    {% include 'front/alert.html' %}
+                    {% csrf_token %}
+                    <div class="messages"></div>
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input id="form_name" type="text" name="name" class="form-control customize" placeholder="Full Name" required="required" data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input id="form_email" type="email" name="email" class="form-control customize" placeholder="Email address" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input id="form_phone" type="tel" name="phone" class="form-control customize" placeholder="Please enter your phone">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input id="form_phone" type="text" name="subject" class="form-control customize" placeholder="Subject">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="form_message" name="message" class="form-control customize" placeholder="Your message" rows="5" required="required" data-error="Please,leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><input type="submit" class="btn btn-custom" value="Send message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>  
+            </div>
+          </div>
+          <!-- CONTACT FORM START -->   
+        </div>
+    </div>
+
+    <!-- MAP START -->   
+    <div class="container">
+        <div class="map">
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167616.99483399244!2d-74.08279002518668!3d40.67646407501496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a560db693e3%3A0xb05e8b0bdf854b54!2sGowanus%2C+Brooklyn%2C+Nueva+York%2C+EE.+UU.!5e0!3m2!1ses-419!2sdo!4v1560863423970!5m2!1ses-419!2sdo" class="map-iframe"></iframe> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.193561881418!2d1.7494115158058148!3d52.47563097980582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47da1a5f83453e8f%3A0x85be30abb894d007!2s61%20London%20Rd%20N%2C%20Lowestoft%20NR32%201LT%2C%20UK!5e0!3m2!1sen!2sng!4v1654160437694!5m2!1sen!2sng" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> 
+    </div>
+    <!-- MAP END -->  
+</section> 
+{% endblock content %}

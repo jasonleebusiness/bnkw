@@ -1,0 +1,304 @@
+{% extends 'account/base.html' %} 
+{% load static %} 
+{% load humanize %} 
+{% load myapptags %}
+{% settingstag as settings %}
+
+{% block seo %}
+<title>Accounts | {{settings.title}}</title>
+
+{% endblock seo %}
+
+
+{% block content %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        {% include 'account/alert.html' %}
+        <!-- Add Order -->
+
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Your</a></li>
+                <li class="breadcrumb-item active">
+                    <a href="javascript:void(0)">Account(s)</a>
+                </li>
+            </ol>
+        </div>
+        <!-- row -->
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-tab">
+                            <div class="custom-tab-1">
+                                <!-- <ul class="nav nav-tabs">
+                                           
+                                            <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link">Personal Information</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#profile-settings" data-toggle="tab" class="nav-link">Settings</a>
+                                            </li>
+                                        </ul> -->
+                                <div class="tab-content">
+                                    <div id="about-me" class="tab-pane fade active show">
+                                        <div class="profile-lang mb-5 mt-5">
+                                            <h4 class="text-primary mb-2">Account Type</h4>
+                                            <a href="javascript:void()" class="text-muted pr-3 f-s-16"><i
+                                                    class="flag-icon flag-icon-us"></i>
+                                                {{account.get_account_type_display}}</a>
+                                        </div>
+                                        <div class="profile-skills mb-5">
+                                            <h4 class="text-primary mb-2">Status</h4>
+
+                                            {% if account.status == 'Approved' %}
+                                            <a href="javascript:void()"
+                                                class="btn btn-success light btn-xs mb-1">{{account.status}}</a>
+                                            {% else %}
+                                            <a href="javascript:void()"
+                                                class="btn btn-warning light btn-xs mb-1">{{account.status}}</a>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="profile-personal-info">
+                                            <h4 class="text-primary mb-4">Account Information</h4>
+                                            {% if account.status == 'Pending' %}
+                                            <p>This Account is being Processed.</p>
+
+                                            {% else %}
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Account Number
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.acc_no}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Account Currency
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.currency}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Balance
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.balance|intcomma}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Registration Date
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.reg_date|date:"M j, Y"}}</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Initial Deposit<span
+                                                            class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.currency}}
+                                                        {{account.initial_deposit|intcomma}}</span>
+                                                </div>
+                                            </div>
+                                            {% if last_deposit %}
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Last Deposit
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.currency}}
+                                                        {{last_deposit.amount|intcomma}}
+                                                    </span>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Date of Last Deposit
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>
+                                                        {% if last_deposit.date %}
+                                                        {{last_deposit.date|date:"M j, Y"}} {% else %}
+                                                        {{last_deposit.created|date:"M j, Y"}}
+                                                        <!-- {{rs.created|date:"SHORT_DATETIME_FORMAT"}} -->
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            {% if last_withdraw %}
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Last Withdrawal
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>{{account.currency}}
+                                                        {{last_withdraw.amount|intcomma}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Date of Last Withdarwal
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span>
+                                                        {% if last_withdraw.date %}
+                                                        {{last_withdraw.date|date:"M j, Y"}} {% else %}
+                                                        {{last_withdraw.created|date:"M j, Y"}}
+                                                        <!-- {{rs.created|date:"SHORT_DATETIME_FORMAT"}} -->
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Routing Number / Sort Code:<span
+                                                            class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9"><span></span></div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        Swift / BIC Code:
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9"><span></span></div>
+                                            </div>
+                                            <div class="row mb-4 mb-sm-2">
+                                                <div class="col-sm-3">
+                                                    <h5 class="f-w-500">
+                                                        IBAN
+                                                        <span class="pull-right d-none d-sm-block"></span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div id="profile-settings" class="tab-pane fade">
+                                        <div class="pt-3">
+                                            <div class="row">
+                                                <!-- password -->
+                                                <div class="settings-form col-md-12 col-lg-6 col-sm-12">
+                                                    <h4 class="text-primary mt-5">Update Password</h4>
+                                                    <form action="/user_password/" method="post">
+                                                        {% csrf_token %}
+
+                                                        <div class="form-group">
+                                                            <label> Current Password</label>
+                                                            <input type="password" autocomplete="current-password"
+                                                                id="id_old_password" name="old_password"
+                                                                placeholder="Current Password" required
+                                                                class="form-control input-rounded" />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label> New Password</label>
+                                                            <input type="password" autocomplete="new-password"
+                                                                id="id_new_password1" name="new_password1"
+                                                                placeholder="New Password" required
+                                                                class="form-control input-rounded" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Repeat Password</label>
+                                                            <input type="password" autocomplete="new-password"
+                                                                id="id_new_password2" name="new_password2"
+                                                                placeholder="Repeat Password" required
+                                                                class="form-control input-rounded" />
+                                                        </div>
+                                                        <button class="btn btn-primary" type="submit">
+                                                            Change Password
+                                                        </button>
+                                                    </form>
+                                                </div>
+
+                                                <!-- pin -->
+                                                <div class="settings-form col-md-12 col-lg-6 col-sm-12">
+                                                    <h4 class="text-primary mt-5">Update Transfer Pin</h4>
+                                                    <form action="/update-pin/" method="post">
+                                                        {% csrf_token %}
+
+                                                        <div class="form-group mb-7">
+                                                            <label> Update Pin</label>
+                                                            <input type="password" name="pin" placeholder="Update Pin"
+                                                                value="{{user.userprofile.pin}}" required
+                                                                class="form-control input-rounded" />
+                                                        </div>
+
+                                                        <!-- <div class="form-group">
+                                                                    <label> New Pin</label>
+                                                                    <input type="password" autocomplete="new-password" id="id_new_password1"
+                                                                    name="new_password1" placeholder="New Pin" required class="form-control">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label> Repeat Pin</label>
+                                                                    <input type="password" autocomplete="new-password" id="id_new_password2"
+                                                                    name="new_password2" placeholder="Repeat Pin" required class="form-control">
+                                                                </div> -->
+                                                        <button class="btn btn-primary" type="submit">
+                                                            Update Pin
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock content%}

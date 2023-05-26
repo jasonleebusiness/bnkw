@@ -1,0 +1,84 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% load myapptags %}
+{% settingstag as settings %}
+
+
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-md bg-transparent m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-dark text-10"><strong>Careers at {{settings.title}}</strong></h1> <span
+                        class="sub-title text-dark">We grow together by connecting great people to great opportunities. At {{settings.title}}, we believe that building relationships matters, and that begins with a diverse and inspired workforce.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr class="m-0">
+
+    <div class="container py-5 mt-3">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12 mb-5 appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                        <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                            <img class="card-img-top" src="{% static '' %}assets2/images/student.jpg" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="card-title mb-1 text-4 font-weight-bold">Student Programs</h4>
+                                <p class="card-text">Find development programs, internships, and career opportunities that will develop your personal strengths and provide rewarding experiences to grow your career.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5  appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                        <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                            <img class="card-img-top" src="{% static '' %}assets2/images/management.jpg" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="card-title mb-1 text-4 font-weight-bold">Management Trainee Program</h4>
+                                <p class="card-text">Our Management Trainee Program offers professional development, on-the-job-training, and community involvement with the opportunity for full-time employment after completion of the program.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5  appear-animation animated  appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+               
+
+                        <div class="card card-border card-border-bottom card-border-hover bg-color-light box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms">
+                            <img class="card-img-top" src="{% static '' %}assets2/images/join.jpg" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="card-title mb-1 text-4 font-weight-bold">Join our Talent Community</h4>
+                                <p class="card-text">We’re always looking for great talent. Stay connected by signing up - just upload your resume, tell us about your interests, and create a profile. We’ll keep you updated on new job and career opportunities as they become available.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 mt-4 mt-md-0">
+                <h4 class="text-primary">Quick links</h4>
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item"><a class="nav-link " href="{% url 'mission' %}">Our Mission and Vision</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'expectation' %}">Service Expectations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'career' %}">sustainability</a></li>
+             
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+{% endblock content %}
