@@ -238,7 +238,7 @@ def transfer(request):
             data.bank = form.cleaned_data['bank']
             data.bank_branch = form.cleaned_data['address']
             data.address = form.cleaned_data['address']
-            data.zip = form.cleaned_data['zip']
+            # data.zip = form.cleaned_data['zip']
 
             data.swift = form.cleaned_data['swift']
             data.routing = form.cleaned_data['routing']
@@ -372,7 +372,7 @@ def transferinternal(request):
             data.bank = form.cleaned_data['bank']
             data.bank_branch = form.cleaned_data['address']
             data.address = form.cleaned_data['address']
-            data.zip = form.cleaned_data['zip']
+            # data.zip = form.cleaned_data['zip']
 
             data.swift = form.cleaned_data['swift']
             data.routing = form.cleaned_data['routing']
@@ -518,7 +518,7 @@ def add_beneficiary(request):
             data.bank = form.cleaned_data['bank']
             data.bank_branch = form.cleaned_data['address']
             data.address = form.cleaned_data['address']
-            data.zip = form.cleaned_data['zip']
+            # data.zip = form.cleaned_data['zip']
             data.swift = form.cleaned_data['swift']
             data.routing = form.cleaned_data['routing']
             data.iban = form.cleaned_data['iban']
@@ -608,7 +608,7 @@ def transfer_beneficiary(request):
             data.bank_acc = benefit.bank_acc
             data.phone = benefit.phone
             data.email = benefit.email
-            data.zip = benefit.zip
+            # data.zip = benefit.zip
             data.bank_branch = benefit.address
             data.address = benefit.address
             data.country = benefit.country

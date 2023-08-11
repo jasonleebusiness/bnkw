@@ -29,7 +29,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECURE_SSL_REDIRECT = False
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = config("EMAIL_BACKEND")
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")

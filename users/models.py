@@ -113,32 +113,23 @@ class Transactions(models.Model):
     swift = models.CharField(max_length=250, blank=True, null=True, default='Nil')
     iban = models.CharField(max_length=250, blank=True, null=True, default='Nil')
     routing = models.IntegerField(blank=True, null=True)
-    
-
     status = models.CharField(max_length=15, choices=STATUS, default='Incompleted')
-    
     action = models.CharField(max_length=10, choices=ACTION, default='Debit')
     channel = models.CharField(max_length=30, choices=CHANNEL, default='Online Transfer')
-  
     date = models.DateTimeField(null=True, blank=True)
     address = models.CharField(max_length=250, blank=True, null=True, default='Nil')
     country = CountryField(blank_label='(select country)', multiple=False)
-    
-    zip = models.CharField(max_length=10, blank=True, null=True)
+    # zip = models.CharField(max_length=10, blank=True, null=True)
     description = models.TextField(blank=True, null=True, max_length=255)
     code = models.CharField(max_length=8)
     qr_code = models.ImageField(upload_to='qr_codes', blank=True, null=True)
     confirm_code = models.BooleanField(default=False)
-    
     bill_count = models.IntegerField(blank=True, null=True, default=0)
     created = models.DateTimeField(auto_now_add=True)
     
 
     def get_absolute_url(self):
         return reverse("transfer_detail", kwargs={"id": self.id})
-    
-   
-    
 
     def __str__(self):
         return f"{self.amount} - {self.action} - {self.status}"
@@ -151,7 +142,7 @@ class Transactions(models.Model):
 class TransferForm(ModelForm):
     class Meta:
         model = Transactions
-        fields = ['beneficiary', 'bank_acc', 'bank', 'bank_locality', 'bank_branch', 'account', 'amount', 'swift', 'iban', 'zip', 'phone', 'email', 'country', 'routing', 'address','description']
+        fields = ['beneficiary', 'bank_acc', 'bank', 'bank_locality', 'bank_branch', 'account', 'amount', 'swift', 'iban', 'phone', 'email', 'country', 'routing', 'address','description']
         labels = {
             'beneficiary': 'Beneficiary Account Name',
             'bank_acc': 'Beneficiary Account Number ',
@@ -182,7 +173,7 @@ class Beneficiary(models.Model):
     query = models.CharField(max_length=250, blank=True, null=True)
     account = models.ForeignKey(Account, blank=True, null=True, on_delete=models.CASCADE)
     
-    zip = models.CharField(max_length=10, blank=True, null=True)
+    # zip = models.CharField(max_length=10, blank=True, null=True)
    
 
     def __str__(self):
@@ -196,7 +187,7 @@ class Beneficiary(models.Model):
 class BeneficiaryForm(ModelForm):
     class Meta:
         model = Beneficiary
-        fields = ['name', 'bank_acc', 'bank', 'bank_branch', 'swift', 'iban', 'zip', 'phone', 'email','country', 'routing', 'address']
+        fields = ['name', 'bank_acc', 'bank', 'bank_branch', 'swift', 'iban', 'phone', 'email','country', 'routing', 'address']
        
 
 class BeneficiaryForm2(ModelForm):
